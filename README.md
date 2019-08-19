@@ -1,6 +1,6 @@
 # flutter_direct
 
-A new Flutter project.
+Design System for Home Credit Indonesia Tippers App.
 
 ## Getting Started
 

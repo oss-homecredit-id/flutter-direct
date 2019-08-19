@@ -1,3 +1,8 @@
+## [0.0.3] - Release
+
+* Add Typography, Font & Color
+
+
 ## [0.0.2] - Release
 
 * Add Tippers Button

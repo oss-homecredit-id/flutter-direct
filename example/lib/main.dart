@@ -1,3 +1,6 @@
+import 'package:example/component_list/button_component.dart';
+import 'package:example/component_list/color_component.dart';
+import 'package:example/component_list/typography_component.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_direct/flutter_direct.dart';
 
@@ -7,6 +10,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      initialRoute: '/',
+      routes: {
+        '/button': (context) => ButtonComponent(),
+        '/typography': (context) => TypographyComponent(),
+        '/color': (context) => ColorComponent(),
+      },
       theme: ThemeData(primaryColor: Colors.grey[850]),
       home: HomeScreen(),
     );
@@ -26,94 +35,34 @@ class _HomeScreenState extends State<HomeScreen> {
           title: Text("Flutter Direct Demo"),
         ),
         body: SingleChildScrollView(
-          scrollDirection: Axis.vertical,
-          child: Container(
+            scrollDirection: Axis.vertical,
             child: Padding(
-              padding: const EdgeInsets.only(
-                top: 16.0,
-              ),
+              padding: const EdgeInsets.all(16.0),
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  Container(
-                    padding: EdgeInsets.symmetric(horizontal: 16),
-                    child: AtomicButton(
-                      key: Key('primary-button'),
-                      onTap: () {},
-                      text: 'Primary Button',
-                      buttonSize: ButtonSize.Large,
-                      buttonColor: ButtonColor.Primary,
-                      buttonType: ButtonType.Normal,
-                    ),
+                  ListTile(
+                    trailing: Icon(Icons.arrow_forward_ios),
+                    title: Text("Typography Component"),
+                    onTap: () {
+                      Navigator.pushNamed(context, '/typography');
+                    },
                   ),
-                  SizedBox(
-                    height: 24,
+                  ListTile(
+                    trailing: Icon(Icons.arrow_forward_ios),
+                    title: Text("Color Component"),
+                    onTap: () {
+                      Navigator.pushNamed(context, '/color');
+                    },
                   ),
-                  Container(
-                    padding: EdgeInsets.symmetric(horizontal: 16),
-                    child: AtomicButton(
-                      key: Key('secondary-button'),
-                      onTap: () {},
-                      text: 'Secondary Button',
-                      buttonSize: ButtonSize.Large,
-                      buttonColor: ButtonColor.Secondary,
-                      buttonType: ButtonType.Normal,
-                    ),
-                  ),
-                  SizedBox(
-                    height: 24,
-                  ),
-                  Container(
-                    padding: EdgeInsets.symmetric(horizontal: 16),
-                    child: AtomicButton(
-                      key: Key('secondary-button'),
-                      onTap: () {},
-                      text: 'Secondary Button',
-                      buttonSize: ButtonSize.Large,
-                      buttonColor: ButtonColor.Disable,
-                      buttonType: ButtonType.Disable,
-                    ),
-                  ),
-                  SizedBox(
-                    height: 24,
-                  ),
-                  Container(
-                    padding: EdgeInsets.symmetric(horizontal: 16),
-                    child: AtomicTypography(
-                      fontType: FontType.Helvetica,
-                      color: AtomicColor.primaryColor,
-                      fontWeight: FontWeight.w500,
-                      data: 'Typography - Helvetica Neue',
-                    ),
-                  ),
-                  SizedBox(
-                    height: 24,
-                  ),
-                  Container(
-                    padding: EdgeInsets.symmetric(horizontal: 16),
-                    child: AtomicTypography(
-                      fontType: FontType.Campton,
-                      color: AtomicColor.primaryColor,
-                      fontWeight: FontWeight.w500,
-                      data: 'Typography - Campton',
-                    ),
-                  ),
-                  SizedBox(
-                    height: 24,
-                  ),
-                  Container(
-                    padding: EdgeInsets.symmetric(horizontal: 16),
-                    child: AtomicTypography(
-                      fontType: FontType.Raleway,
-                      color: AtomicColor.primaryColor,
-                      fontWeight: FontWeight.w500,
-                      data: 'Typography - Raleway',
-                    ),
+                  ListTile(
+                    trailing: Icon(Icons.arrow_forward_ios),
+                    title: Text("Button Component"),
+                    onTap: () {
+                      Navigator.pushNamed(context, '/button');
+                    },
                   ),
                 ],
               ),
-            ),
-          ),
-        ));
+            )));
   }
 }

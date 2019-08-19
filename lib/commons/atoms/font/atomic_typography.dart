@@ -1,9 +1,11 @@
 part of flutter_direct;
 
-enum FontType { Title1, Title2, Title3, Body1, Body2, TextButton, Caption, Campton, Helvetica, Raleway }
+enum FontType { Title1, Title2, Title3, Body1, Body2, TextButton, Caption }
+enum FontFamily { Campton, Helvetica, Raleway }
 
 class AtomicTypography extends StatelessWidget {
   final FontType fontType;
+  final FontFamily fontFamily;
   final Color color;
   final String data;
   final FontWeight fontWeight;
@@ -13,6 +15,7 @@ class AtomicTypography extends StatelessWidget {
 
   AtomicTypography({
     this.fontType,
+    this.fontFamily,
     this.color,
     this.data,
     this.textAlign,
@@ -33,7 +36,7 @@ class AtomicTypography extends StatelessWidget {
       ),
       textScaleFactor: 1.0,
       style: TextStyle(
-        fontFamily: getFontFamilyType(fontType),
+        fontFamily: getFontFamilyType(fontFamily),
         fontSize: fontType == FontType.Title1
             ? 22
             : fontType == FontType.Title2
@@ -61,15 +64,15 @@ class AtomicTypography extends StatelessWidget {
     );
   }
 
-  getFontFamilyType(FontType fontType) {
-    switch (fontType) {
-      case FontType.Campton:
+  getFontFamilyType(FontFamily fontFamily) {
+    switch (fontFamily) {
+      case FontFamily.Campton:
         return AtomicFont.campton_font;
         break;
-      case FontType.Raleway:
+      case FontFamily.Raleway:
         return AtomicFont.raleway_font;
         break;
-      case FontType.Helvetica:
+      case FontFamily.Helvetica:
         return AtomicFont.helvetica_font;
         break;
       default:
