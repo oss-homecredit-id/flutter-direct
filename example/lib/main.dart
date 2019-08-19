@@ -25,36 +25,94 @@ class _HomeScreenState extends State<HomeScreen> {
         appBar: AppBar(
           title: Text("Flutter Direct Demo"),
         ),
-        body: Padding(
-          padding: const EdgeInsets.only(
-            top: 16.0,
-          ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              Container(
-                padding: EdgeInsets.symmetric(horizontal: 16),
-                child: AtomicButton(
-                  key: Key('primary-button'),
-                  onTap: () {},
-                  text: 'Primary Button',
-                  buttonSize: ButtonSize.Large,
-                  buttonColor: ButtonColor.Primary,
-                ),
+        body: SingleChildScrollView(
+          scrollDirection: Axis.vertical,
+          child: Container(
+            child: Padding(
+              padding: const EdgeInsets.only(
+                top: 16.0,
               ),
-              SizedBox(
-                height: 24,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  Container(
+                    padding: EdgeInsets.symmetric(horizontal: 16),
+                    child: AtomicButton(
+                      key: Key('primary-button'),
+                      onTap: () {},
+                      text: 'Primary Button',
+                      buttonSize: ButtonSize.Large,
+                      buttonColor: ButtonColor.Primary,
+                      buttonType: ButtonType.Normal,
+                    ),
+                  ),
+                  SizedBox(
+                    height: 24,
+                  ),
+                  Container(
+                    padding: EdgeInsets.symmetric(horizontal: 16),
+                    child: AtomicButton(
+                      key: Key('secondary-button'),
+                      onTap: () {},
+                      text: 'Secondary Button',
+                      buttonSize: ButtonSize.Large,
+                      buttonColor: ButtonColor.Secondary,
+                      buttonType: ButtonType.Normal,
+                    ),
+                  ),
+                  SizedBox(
+                    height: 24,
+                  ),
+                  Container(
+                    padding: EdgeInsets.symmetric(horizontal: 16),
+                    child: AtomicButton(
+                      key: Key('secondary-button'),
+                      onTap: () {},
+                      text: 'Secondary Button',
+                      buttonSize: ButtonSize.Large,
+                      buttonColor: ButtonColor.Disable,
+                      buttonType: ButtonType.Disable,
+                    ),
+                  ),
+                  SizedBox(
+                    height: 24,
+                  ),
+                  Container(
+                    padding: EdgeInsets.symmetric(horizontal: 16),
+                    child: AtomicTypography(
+                      fontType: FontType.Helvetica,
+                      color: AtomicColor.primaryColor,
+                      fontWeight: FontWeight.w500,
+                      data: 'Typography - Helvetica Neue',
+                    ),
+                  ),
+                  SizedBox(
+                    height: 24,
+                  ),
+                  Container(
+                    padding: EdgeInsets.symmetric(horizontal: 16),
+                    child: AtomicTypography(
+                      fontType: FontType.Campton,
+                      color: AtomicColor.primaryColor,
+                      fontWeight: FontWeight.w500,
+                      data: 'Typography - Campton',
+                    ),
+                  ),
+                  SizedBox(
+                    height: 24,
+                  ),
+                  Container(
+                    padding: EdgeInsets.symmetric(horizontal: 16),
+                    child: AtomicTypography(
+                      fontType: FontType.Raleway,
+                      color: AtomicColor.primaryColor,
+                      fontWeight: FontWeight.w500,
+                      data: 'Typography - Raleway',
+                    ),
+                  ),
+                ],
               ),
-              Container(
-                padding: EdgeInsets.symmetric(horizontal: 16),
-                child: AtomicTypography(
-                  fontType: FontType.Title1,
-                  color: AtomicColor.primaryColor,
-                  fontWeight: FontWeight.w500,
-                  data: 'Atomic Typography - Helvetica Neue',
-                ),
-              )
-            ],
+            ),
           ),
         ));
   }

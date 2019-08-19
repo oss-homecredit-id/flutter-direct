@@ -1,7 +1,8 @@
 part of flutter_direct;
 
-enum ButtonColor { Primary, Secondary }
+enum ButtonColor { Primary, Secondary, Disable }
 enum ButtonSize { Small, Default, Large }
+enum ButtonType { Normal, Disable }
 
 class AtomicButton extends StatelessWidget {
   final Key key;
@@ -12,6 +13,7 @@ class AtomicButton extends StatelessWidget {
   final double height;
   final ButtonColor buttonColor;
   final ButtonSize buttonSize;
+  final ButtonType buttonType;
   final Color textColor;
 
   AtomicButton(
@@ -19,6 +21,7 @@ class AtomicButton extends StatelessWidget {
       this.onTap,
       @required this.text,
       this.height,
+      @required this.buttonType,
       this.alignment = Alignment.center,
       @required this.buttonColor,
       this.textColor,
@@ -46,7 +49,7 @@ class AtomicButton extends StatelessWidget {
             shape: BoxShape.rectangle,
           ),
           child: InkWell(
-            onTap: onTap,
+            onTap: getButtonType(buttonType) ? onTap : null,
             borderRadius: borderRadiusDefault,
             child: Container(
               alignment: alignment,
@@ -60,9 +63,9 @@ class AtomicButton extends StatelessWidget {
                   Text(
                     text,
                     style: TextStyle(
-                      color: textColor ?? Colors.white,
-                      fontSize: buttonSize == ButtonSize.Small ? 14 : 16,
-                    ),
+                        color: textColor ?? Colors.white,
+                        fontSize: buttonSize == ButtonSize.Small ? 14 : 16,
+                        fontWeight: FontWeight.bold),
                   )
                 ],
               ),
@@ -80,6 +83,21 @@ class AtomicButton extends StatelessWidget {
         break;
       case ButtonColor.Secondary:
         return AtomicColor.secondaryColor;
+        break;
+      case ButtonColor.Disable:
+        return AtomicColor.disableColor;
+        break;
+      default:
+    }
+  }
+
+  getButtonType(ButtonType buttonType) {
+    switch (buttonType) {
+      case ButtonType.Normal:
+        return true;
+        break;
+      case ButtonType.Disable:
+        return false;
         break;
       default:
     }

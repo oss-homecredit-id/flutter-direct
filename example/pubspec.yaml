@@ -58,17 +58,33 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  # fonts:
-  #   - family: Schyler
-  #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
-  #       - asset: fonts/Schyler-Italic.ttf
-  #         style: italic
-  #   - family: Trajan Pro
-  #     fonts:
-  #       - asset: fonts/TrajanPro.ttf
-  #       - asset: fonts/TrajanPro_Bold.ttf
-  #         weight: 700
-  #
+
+  fonts:
+    - family: HelveticaNeue
+      fonts:
+        - asset: packages/flutter_direct/fonts/HelveticaNeue.ttf
+        - asset: packages/flutter_direct/fonts/HelveticaNeue-Italic.ttf
+          style: italic
+        - asset: packages/flutter_direct/fonts/HelveticaNeue-Medium.ttf
+          weight: 500
+        - asset: packages/flutter_direct/fonts/HelveticaNeue-Bold.ttf
+          weight: 600
+    - family: Campton
+      fonts:
+        - asset: packages/flutter_direct/fonts/Campton-Book.otf
+        - asset: packages/flutter_direct/fonts/Campton-Light.otf
+        - asset: packages/flutter_direct/fonts/Campton-Medium.otf
+          weight: 500
+        - asset: packages/flutter_direct/fonts/Campton-Bold.otf
+          weight: 600
+    - family: Raleway
+      fonts:
+        - asset: packages/flutter_direct/fonts/Raleway-Regular.ttf
+        - asset: packages/flutter_direct/fonts/Raleway-Light.ttf
+        - asset: packages/flutter_direct/fonts/Raleway-Medium.ttf
+          weight: 500
+        - asset: packages/flutter_direct/fonts/Raleway-Bold.ttf
+          weight: 600
+
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
