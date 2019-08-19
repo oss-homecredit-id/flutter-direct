@@ -1,3 +1,7 @@
+## [0.0.3+1] - Release
+
+* Add License
+
 ## [0.0.3] - Release
 
 * Add Typography, Font & Color
