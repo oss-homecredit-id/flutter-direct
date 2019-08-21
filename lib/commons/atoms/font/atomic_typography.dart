@@ -4,6 +4,7 @@ enum FontType { Title1, Title2, Title3, Body1, Body2, TextButton, Caption }
 enum FontFamily { Campton, Helvetica, Raleway }
 
 class AtomicTypography extends StatelessWidget {
+  final String keyValue;
   final FontType fontType;
   final FontFamily fontFamily;
   final Color color;
@@ -14,6 +15,7 @@ class AtomicTypography extends StatelessWidget {
   final double lineHeight;
 
   AtomicTypography({
+    this.keyValue,
     this.fontType,
     this.fontFamily,
     this.color,
@@ -28,6 +30,7 @@ class AtomicTypography extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       data ?? 'no text',
+      key: Key(keyValue ?? ''),
       overflow:
           ellipsisText == true ? TextOverflow.ellipsis : TextOverflow.clip,
       textAlign: textAlign ?? TextAlign.left,

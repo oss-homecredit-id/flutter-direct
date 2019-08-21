@@ -19,12 +19,11 @@ class ButtonComponent extends StatelessWidget {
             Container(
               padding: EdgeInsets.symmetric(horizontal: 16),
               child: AtomicButton(
-                key: Key('primary-button'),
+                //keyValue: 'primary-button',
                 onTap: () {},
                 text: 'Primary Button',
                 buttonSize: ButtonSize.Large,
-                buttonColor: ButtonColor.Primary,
-                buttonType: ButtonType.Normal,
+                buttonType: ButtonType.Primary,
               ),
             ),
             SizedBox(
@@ -33,12 +32,11 @@ class ButtonComponent extends StatelessWidget {
             Container(
               padding: EdgeInsets.symmetric(horizontal: 16),
               child: AtomicButton(
-                key: Key('secondary-button'),
+                keyValue: 'secondary-button',
                 onTap: () {},
                 text: 'Secondary Button',
                 buttonSize: ButtonSize.Large,
-                buttonColor: ButtonColor.Secondary,
-                buttonType: ButtonType.Normal,
+                buttonType: ButtonType.Secondary,
               ),
             ),
             SizedBox(
@@ -47,11 +45,10 @@ class ButtonComponent extends StatelessWidget {
             Container(
               padding: EdgeInsets.symmetric(horizontal: 16),
               child: AtomicButton(
-                key: Key('secondary-button'),
+                keyValue: 'disable-button',
                 onTap: () {},
                 text: 'Disable Button',
                 buttonSize: ButtonSize.Large,
-                buttonColor: ButtonColor.Disable,
                 buttonType: ButtonType.Disable,
               ),
             ),
