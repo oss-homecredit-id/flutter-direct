@@ -1,5 +1,6 @@
 import 'package:example/component_list/button_component.dart';
 import 'package:example/component_list/color_component.dart';
+import 'package:example/component_list/pp_home.dart';
 import 'package:example/component_list/typography_component.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_direct/flutter_direct.dart';
@@ -15,6 +16,7 @@ class MyApp extends StatelessWidget {
         '/button': (context) => ButtonComponent(),
         '/typography': (context) => TypographyComponent(),
         '/color': (context) => ColorComponent(),
+        '/homepp' : (context) => PPHomeScreen()
       },
       theme: ThemeData(primaryColor: Colors.grey[850]),
       home: HomeScreen(),
@@ -59,6 +61,13 @@ class _HomeScreenState extends State<HomeScreen> {
                     title: Text("Button Component"),
                     onTap: () {
                       Navigator.pushNamed(context, '/button');
+                    },
+                  ),
+                  ListTile(
+                    trailing: Icon(Icons.arrow_forward_ios),
+                    title: Text("Home Partner Portal"),
+                    onTap: () {
+                      Navigator.pushNamed(context, '/homepp');
                     },
                   ),
                 ],
