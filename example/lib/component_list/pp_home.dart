@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_direct/flutter_direct.dart';
 
 import 'arc_clipper.dart';
 
@@ -16,7 +15,31 @@ class PPHomeScreen extends StatefulWidget {
   _PPHomeScreenState createState() => _PPHomeScreenState();
 }
 
+class ProductModel {
+  String image;
+  String title;
+
+  ProductModel({this.image, this.title});
+
+  static final List<ProductModel> dummyData = [
+    new ProductModel(image: 'assets/imgs/image.png', title: "DONA"),
+    new ProductModel(image: 'assets/imgs/image.png', title: "FlexiFast"),
+    new ProductModel(image: 'assets/imgs/image.png', title: "Kartu Kredit"),
+    new ProductModel(image: 'assets/imgs/image.png', title: "MOTOCOVER"),
+    new ProductModel(image: 'assets/imgs/image.png', title: "AMAN"),
+    new ProductModel(image: 'assets/imgs/image.png', title: "TEC PROTECT"),
+    new ProductModel(image: 'assets/imgs/image.png', title: "SANTAI"),
+    new ProductModel(image: 'assets/imgs/image.png', title: "Semua Produk"),
+    new ProductModel(image: 'assets/imgs/image.png', title: "Sample 1"),
+    new ProductModel(image: 'assets/imgs/image.png', title: "Sample 2"),
+    new ProductModel(image: 'assets/imgs/image.png', title: "Sample 3"),
+    new ProductModel(image: 'assets/imgs/image.png', title: "Sample 4")
+  ];
+}
+
 class _PPHomeScreenState extends State<PPHomeScreen> {
+  static const lightGrey = const Color(0xFFECECEC);
+
   Widget appBackround() => Column(
         children: <Widget>[
           new Flexible(
@@ -45,10 +68,21 @@ class _PPHomeScreenState extends State<PPHomeScreen> {
         ],
       );
 
-  Widget titleProduct() => Container(
+  Widget titleProduk() => Container(
         padding: EdgeInsets.symmetric(horizontal: 35.0),
         margin: EdgeInsets.only(top: 15.0),
-        child: Text('Product HOME CREDIT',
+        child: Text('Produk HOME CREDIT',
+            style: TextStyle(
+                fontSize: 16.0,
+                fontWeight: FontWeight.bold,
+                color: Colors.black,
+                fontFamily: 'Campton')),
+      );
+
+  Widget titlePromosi() => Container(
+        padding: EdgeInsets.symmetric(horizontal: 20.0),
+        margin: EdgeInsets.only(top: 15.0),
+        child: Text('Promosi',
             style: TextStyle(
                 fontSize: 16.0,
                 fontWeight: FontWeight.bold,
@@ -61,8 +95,10 @@ class _PPHomeScreenState extends State<PPHomeScreen> {
         children: <Widget>[
           header(),
           cardKomisi(),
-          titleProduct(),
-          cardProduct()
+          titleProduk(),
+          buildProductMenu(),
+          divider(),
+          titlePromosi()
         ],
       );
 
@@ -167,60 +203,62 @@ class _PPHomeScreenState extends State<PPHomeScreen> {
         ),
       );
 
-  Widget cardProduct() => AspectRatio(
-        aspectRatio: 16 / 9,
-        child: Container(
-          color: Colors.red,
-          margin: EdgeInsets.only(left: 20.0, right: 20.0, top: 10.0),
-          //height: MediaQuery.of(context).size.height * 0.35,
-          width: double.infinity,
-          child: GridView.count(
-            padding: EdgeInsets.symmetric(horizontal: 18.0, vertical: 8.0),
-            mainAxisSpacing: MediaQuery.of(context).size.height * 0.06,
-            crossAxisSpacing: 15.0,
-            crossAxisCount: 4,
-            childAspectRatio: 1.0,
-            physics: NeverScrollableScrollPhysics(),
-            children: <Widget>[
-              squareProduct(),
-              squareProduct(),
-              squareProduct(),
-              squareProduct(),
-              squareProduct(),
-              squareProduct(),
-              squareProduct(),
-              squareProduct(),
-            ],
+  Widget divider() => new SizedBox(
+        height: 20.0,
+        child: new Center(
+          child: new Container(
+            margin: new EdgeInsetsDirectional.only(start: 1.0, end: 1.0),
+            height: 10.0,
+            color: lightGrey,
           ),
         ),
       );
 
-  Widget squareProduct() => Container(
-    child: Column(
-          children: <Widget>[
-            Container(
-              padding: EdgeInsets.all(8),
-              decoration: BoxDecoration(
-                color: Colors.white,
-                border: Border.all(color: Colors.transparent, width: 1),
-                borderRadius: BorderRadius.all(Radius.circular(15)),
-                boxShadow: [
-                  new BoxShadow(
-                      color: Colors.grey,
-                      offset: new Offset(1.0, 3.0),
-                      blurRadius: 3.0)
-                ],
+  Widget rowProduct(ProductModel productModel) => Container(
+        child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              new Container(
+                decoration: new BoxDecoration(
+                  color: Colors.white,
+                    border: Border.all(color: Colors.transparent, width: 1.0),
+                    boxShadow: [
+                      new BoxShadow(
+                        color: Colors.grey,
+                        offset: new Offset(1.0, 3.0),
+                        blurRadius: 1.0,
+                      )
+                    ],
+                    borderRadius:
+                        new BorderRadius.all(new Radius.circular(10.0))),
+                padding: EdgeInsets.all(12.0),
+                child: Image.asset(
+                  'assets/imgs/image.png',
+                  height: 30,
+                  fit: BoxFit.fitHeight,
+                ),
               ),
-              child: Image.asset(
-                'assets/imgs/image.png',
-                height: 30,
-                fit: BoxFit.fitHeight,
+              new Padding(
+                padding: EdgeInsets.only(top: 6.0),
               ),
-            ),
-            Text('DONA')
-          ],
-        ),
-  );
+              Flexible(child: new Text(productModel.title, style: new TextStyle(fontSize: 10.0)))
+            ]),
+      );
+
+  Widget buildProductMenu() => AspectRatio(
+        aspectRatio: 16 / 8,
+        child: new Container(
+            margin: EdgeInsets.only(left: 30.0, right: 30.0),
+            child: GridView.builder(
+                padding: EdgeInsets.symmetric(vertical: 8.0),
+                physics: NeverScrollableScrollPhysics(),
+                itemCount: 8,
+                gridDelegate: new SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 4),
+                itemBuilder: (context, position) {
+                  return rowProduct(ProductModel.dummyData[position]);
+                })),
+      );
 
   @override
   Widget build(BuildContext context) {
@@ -230,5 +268,9 @@ class _PPHomeScreenState extends State<PPHomeScreen> {
         children: <Widget>[appBackround(), content()],
       ),
     );
+  }
+
+  goToPage(int number) {
+    print(number);
   }
 }

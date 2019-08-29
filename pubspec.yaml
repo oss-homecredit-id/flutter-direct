@@ -20,6 +20,11 @@ dev_dependencies:
 
 # The following section is specific to Flutter.
 flutter:
+  uses-material-design: true
+
+  # To add assets to your application, add an assets section, like this:
+  assets:
+   - packages/flutter_direct/imgs/image.png
   # To add assets to your package, add an assets section, like this:
   #
   # For details regarding assets in packages, see
@@ -59,6 +64,14 @@ flutter:
         - asset: packages/flutter_direct/fonts/Raleway-Medium.ttf
           weight: 500
         - asset: packages/flutter_direct/fonts/Raleway-Bold.ttf
+          weight: 600
+    - family: PtSans
+      fonts:
+        - asset: packages/flutter_direct/fonts/PTSans-Regular.ttf
+        - asset: packages/flutter_direct/fonts/PTSans-RegularItalic.ttf
+        - asset: packages/flutter_direct/fonts/PTSans-Bold.ttf
+          weight: 500
+        - asset: packages/flutter_direct/fonts/PTSans-BoldItalic.ttf
           weight: 600
 
 

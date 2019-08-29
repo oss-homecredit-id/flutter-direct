@@ -25,6 +25,8 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.2
+  flutter_slidable: ^0.5.3
+  auto_size_text: ^2.1.0
 
 dev_dependencies:
   flutter_test:
@@ -86,6 +88,14 @@ flutter:
         - asset: packages/flutter_direct/fonts/Raleway-Medium.ttf
           weight: 500
         - asset: packages/flutter_direct/fonts/Raleway-Bold.ttf
+          weight: 600
+    - family: PtSans
+      fonts:
+        - asset: assets/fonts/PTSans-Regular.ttf
+        - asset: assets/fonts/PTSans-RegularItalic.ttf
+        - asset: assets/fonts/PTSans-Bold.ttf
+          weight: 500
+        - asset: assets/fonts/PTSans-BoldItalic.ttf
           weight: 600
 
   # For details regarding fonts from package dependencies,
