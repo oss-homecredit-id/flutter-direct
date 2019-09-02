@@ -3,6 +3,7 @@ import 'package:example/component_list/color_component.dart';
 import 'package:example/component_list/input_component.dart';
 import 'package:example/component_list/listtile_component.dart';
 import 'package:example/component_list/pp_home.dart';
+import 'package:example/component_list/pp_homev5.dart';
 import 'package:example/component_list/pp_inbox.dart';
 import 'package:example/component_list/typography_component.dart';
 import 'package:flutter/material.dart';
@@ -21,8 +22,9 @@ class MyApp extends StatelessWidget {
         '/color': (context) => ColorComponent(),
         '/input': (context) => InputComponent(),
         '/listtile': (context) => ListitleComponent(),
-        '/homepp' : (context) => PPHomeScreen(),
-        '/inboxpp' : (context) => PPInboxScreen()
+        '/homepp': (context) => PPHomeScreen(),
+        '/homeppv5': (context) => PPHomeScreenV5(),
+        '/inboxpp': (context) => PPInboxScreen()
       },
       theme: ThemeData(primaryColor: Colors.grey[850]),
       home: HomeScreen(),
@@ -88,6 +90,13 @@ class _HomeScreenState extends State<HomeScreen> {
                     title: Text("Home Partner Portal"),
                     onTap: () {
                       Navigator.pushNamed(context, '/homepp');
+                    },
+                  ),
+                  ListTile(
+                    trailing: Icon(Icons.arrow_forward_ios),
+                    title: Text("Home Partner Portal V5"),
+                    onTap: () {
+                      Navigator.pushNamed(context, '/homeppv5');
                     },
                   ),
                   ListTile(

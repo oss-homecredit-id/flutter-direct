@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 
 import 'arc_clipper.dart';
 
@@ -39,34 +40,15 @@ class ProductModel {
 
 class _PPHomeScreenState extends State<PPHomeScreen> {
   static const lightGrey = const Color(0xFFECECEC);
-
-  Widget appBackround() => Column(
-        children: <Widget>[
-          new Flexible(
-            flex: 2,
-            child: ClipPath(
-              clipper: new ArcClipper(),
-              child: Stack(
-                children: <Widget>[
-                  new Container(
-                    decoration: new BoxDecoration(
-                      gradient: new LinearGradient(
-                          begin: Alignment.centerLeft,
-                          end: Alignment.centerLeft,
-                          colors: PPHomeScreen.kitGradientsHeader),
-                    ),
-                  ),
-                  new Container(width: double.infinity, child: new Container())
-                ],
-              ),
-            ),
-          ),
-          new Flexible(
-            flex: 4,
-            child: new Container(),
-          )
-        ],
-      );
+  final List<String> name = [
+    'John Doe',
+    'Jane Doe',
+    'Mia Goth',
+    'Ramses',
+    'Paul Vik',
+    'Thomas',
+    'Johnny'
+  ];
 
   Widget titleProduk() => Container(
         padding: EdgeInsets.symmetric(horizontal: 35.0),
@@ -81,13 +63,46 @@ class _PPHomeScreenState extends State<PPHomeScreen> {
 
   Widget titlePromosi() => Container(
         padding: EdgeInsets.symmetric(horizontal: 20.0),
-        margin: EdgeInsets.only(top: 15.0),
-        child: Text('Promosi',
-            style: TextStyle(
-                fontSize: 16.0,
-                fontWeight: FontWeight.bold,
-                color: Colors.black,
-                fontFamily: 'Campton')),
+        margin: EdgeInsets.only(top: 15.0, bottom: 10.0),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: <Widget>[
+            Text('Promosi',
+                style: TextStyle(
+                    fontSize: 16.0,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black,
+                    fontFamily: 'Campton')),
+            Text('Lihat Semua',
+                style: TextStyle(
+                    fontSize: 12.0,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.red,
+                    fontFamily: 'PT Sans')),
+          ],
+        ),
+      );
+
+  Widget titleStories() => Container(
+        padding: EdgeInsets.symmetric(horizontal: 20.0),
+        margin: EdgeInsets.only(top: 15.0, bottom: 10.0),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: <Widget>[
+            Text('Stories',
+                style: TextStyle(
+                    fontSize: 16.0,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black,
+                    fontFamily: 'Campton')),
+            Text('Lihat Semua',
+                style: TextStyle(
+                    fontSize: 12.0,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.red,
+                    fontFamily: 'PT Sans')),
+          ],
+        ),
       );
 
   Widget content() => Column(
@@ -98,13 +113,13 @@ class _PPHomeScreenState extends State<PPHomeScreen> {
           titleProduk(),
           buildProductMenu(),
           divider(),
-          titlePromosi()
+          titlePromosi(),
+          carouselBanner()
         ],
       );
 
-  Widget header() => SafeArea(
-          child: Container(
-        padding: EdgeInsets.only(top: 15.0),
+  Widget header() => Container(
+        margin: EdgeInsets.only(bottom: 20),
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 20.0),
           child: Row(
@@ -117,7 +132,7 @@ class _PPHomeScreenState extends State<PPHomeScreen> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     Padding(
-                      padding: const EdgeInsets.only(bottom: 10.0),
+                      padding: const EdgeInsets.only(bottom: 5.0),
                       child: Text('Selamat Siang,',
                           style: TextStyle(
                               fontWeight: FontWeight.bold,
@@ -126,7 +141,7 @@ class _PPHomeScreenState extends State<PPHomeScreen> {
                               fontFamily: 'Campton')),
                     ),
                     Padding(
-                      padding: const EdgeInsets.only(bottom: 10.0),
+                      padding: const EdgeInsets.only(bottom: 5.0),
                       child: Text('Gordon Gecko,',
                           style: TextStyle(
                               fontWeight: FontWeight.bold,
@@ -135,7 +150,7 @@ class _PPHomeScreenState extends State<PPHomeScreen> {
                               fontFamily: 'Campton')),
                     ),
                     Padding(
-                      padding: const EdgeInsets.only(bottom: 7.0),
+                      padding: const EdgeInsets.only(bottom: 3.0),
                       child: FittedBox(
                         fit: BoxFit.fitWidth,
                         child: Text('Kode Tippers Kamu FQGH09',
@@ -161,7 +176,7 @@ class _PPHomeScreenState extends State<PPHomeScreen> {
             ],
           ),
         ),
-      ));
+      );
 
   Widget cardKomisi() => Container(
         height: MediaQuery.of(context).size.height * 0.18,
@@ -215,34 +230,34 @@ class _PPHomeScreenState extends State<PPHomeScreen> {
       );
 
   Widget rowProduct(ProductModel productModel) => Container(
-        child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              new Container(
-                decoration: new BoxDecoration(
-                  color: Colors.white,
-                    border: Border.all(color: Colors.transparent, width: 1.0),
-                    boxShadow: [
-                      new BoxShadow(
-                        color: Colors.grey,
-                        offset: new Offset(1.0, 3.0),
-                        blurRadius: 1.0,
-                      )
-                    ],
-                    borderRadius:
-                        new BorderRadius.all(new Radius.circular(10.0))),
-                padding: EdgeInsets.all(12.0),
-                child: Image.asset(
-                  'assets/imgs/image.png',
-                  height: 30,
-                  fit: BoxFit.fitHeight,
-                ),
-              ),
-              new Padding(
-                padding: EdgeInsets.only(top: 6.0),
-              ),
-              Flexible(child: new Text(productModel.title, style: new TextStyle(fontSize: 10.0)))
-            ]),
+        child: Column(mainAxisAlignment: MainAxisAlignment.center, children: <
+            Widget>[
+          new Container(
+            decoration: new BoxDecoration(
+                color: Colors.white,
+                border: Border.all(color: Colors.transparent, width: 1.0),
+                boxShadow: [
+                  new BoxShadow(
+                    color: Colors.grey,
+                    offset: new Offset(1.0, 3.0),
+                    blurRadius: 1.0,
+                  )
+                ],
+                borderRadius: new BorderRadius.all(new Radius.circular(6.0))),
+            padding: EdgeInsets.all(12.0),
+            child: Image.asset(
+              'assets/imgs/image.png',
+              height: 30,
+              fit: BoxFit.fitHeight,
+            ),
+          ),
+          new Padding(
+            padding: EdgeInsets.only(top: 6.0),
+          ),
+          Flexible(
+              child: new Text(productModel.title,
+                  style: new TextStyle(fontSize: 10.0)))
+        ]),
       );
 
   Widget buildProductMenu() => AspectRatio(
@@ -260,14 +275,111 @@ class _PPHomeScreenState extends State<PPHomeScreen> {
                 })),
       );
 
+  Widget carouselBanner() => Container(
+        margin: EdgeInsets.only(top: 10),
+        child: CarouselSlider(
+          autoPlay: true,
+          height: 100.0,
+          items: [1, 2, 3, 4, 5].map((i) {
+            return Builder(
+              builder: (BuildContext context) {
+                return Container(
+                    margin: EdgeInsets.symmetric(horizontal: 4.0),
+                    decoration: BoxDecoration(
+                      color: Colors.red,
+                      borderRadius: BorderRadius.all(Radius.circular(10)),
+                    ));
+              },
+            );
+          }).toList(),
+        ),
+      );
+
+  Widget buildStories() => AspectRatio(
+      aspectRatio: 16 / 7.5,
+      child: new Container(
+        margin: EdgeInsets.only(left: 6.0, top: 10.0),
+        child: ListView.builder(
+            scrollDirection: Axis.horizontal,
+            itemCount: name.length,
+            itemBuilder: (context, index) {
+              return Container(
+                width: MediaQuery.of(context).size.width * 0.25,
+                margin: EdgeInsets.symmetric(horizontal: 8.0),
+                child: Column(
+                  children: <Widget>[
+                    Container(
+                      height: MediaQuery.of(context).size.height * 0.19,
+                      decoration: BoxDecoration(
+                        border: Border.all(color: Colors.transparent, width: 1),
+                        borderRadius: BorderRadius.all(Radius.circular(6)),
+                        color: Colors.blue,
+                      ),
+                    ),
+                    SizedBox(
+                      height: 12,
+                    ),
+                    Container(
+                      child: Center(
+                          child: Text(
+                        name[index],
+                        style: TextStyle(
+                            fontSize: 10.0,
+                            color: Colors.black,
+                            fontFamily: 'PT Sans'),
+                      )),
+                    ),
+                  ],
+                ),
+              );
+            }),
+      ));
+
+  Widget bodyBuilder() => SingleChildScrollView(
+          child: Stack(children: <Widget>[
+        SizedBox(
+          height: MediaQuery.of(context).size.height * 0.33,
+          width: double.infinity,
+          child: Container(
+            decoration: BoxDecoration(
+              gradient: new LinearGradient(
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+                colors: PPHomeScreen.kitGradientsHeader,
+              ),
+            ),
+          ),
+        ),
+        Container(
+            margin: EdgeInsets.only(
+                top: MediaQuery.of(context).size.height * 0.08, bottom: 25),
+            child: Column(
+              children: <Widget>[
+                Stack(children: <Widget>[
+                  Container(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        header(),
+                        cardKomisi(),
+                        titleProduk(),
+                        buildProductMenu(),
+                        divider(),
+                        titlePromosi(),
+                        carouselBanner(),
+                        titleStories(),
+                        buildStories()
+                      ],
+                    ),
+                  )
+                ])
+              ],
+            ))
+      ]));
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Stack(
-        fit: StackFit.expand,
-        children: <Widget>[appBackround(), content()],
-      ),
-    );
+    return Scaffold(backgroundColor: Colors.white, body: bodyBuilder());
   }
 
   goToPage(int number) {

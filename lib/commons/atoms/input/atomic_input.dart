@@ -18,19 +18,18 @@ class AtomicInput extends StatelessWidget {
   final TextEditingController searchController;
   final TextEditingController inputController;
 
-  AtomicInput({
-    this.hintText,
-    this.onTap,
-    this.keyValue,
-    this.inputType,
-    this.formType,
-    this.funcValidatorUsername,
-    this.funcValidatorPassword,
-    this.usernameController,
-    this.passwordController,
-    this.searchController,
-    this.inputController
-  });
+  AtomicInput(
+      {this.hintText,
+      this.onTap,
+      this.keyValue,
+      this.inputType,
+      this.formType,
+      this.funcValidatorUsername,
+      this.funcValidatorPassword,
+      this.usernameController,
+      this.passwordController,
+      this.searchController,
+      this.inputController});
 
   @override
   Widget build(BuildContext context) {
@@ -47,7 +46,7 @@ class AtomicInput extends StatelessWidget {
                   child: Icon(Icons.close, color: Colors.grey),
                 ),
                 hintText: hintText,
-                hintStyle: TextStyle(fontFamily: 'PtSans'),
+                hintStyle: TextStyle(fontFamily: 'PtSans', fontSize: 14),
                 fillColor: Colors.white,
                 focusedBorder: OutlineInputBorder(
                   borderSide: const BorderSide(color: Colors.grey),
