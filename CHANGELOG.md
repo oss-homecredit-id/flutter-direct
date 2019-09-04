@@ -1,3 +1,19 @@
+## [0.0.4] - Release
+
+* Home v5
+* Home v6 fixed
+* Inbox
+* Input Component
+* List Style Component
+* Arc Clipper
+* Atom
+* Custom Card
+* Custom Card v2
+* Custom Input
+* Custom List
+* Molecule
+* Molecule List View
+
 ## [0.0.3+1] - Release
 
 * Add License
