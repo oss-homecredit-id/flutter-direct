@@ -6,7 +6,7 @@ class TypographyComponent extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Atomic Button"),
+        title: Text("Atomic Typography"),
       ),
       body: Container(
           child: Padding(

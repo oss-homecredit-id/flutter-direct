@@ -6,7 +6,7 @@ class ColorComponent extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Atomic Button"),
+        title: Text("Atomic Color"),
       ),
       body: Container(
           child: Padding(
