@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter_direct/commons/atoms/custom_card/atomic_custom_card.dart';
-import 'package:flutter_direct/commons/atoms/input/atomic_input.dart';
 
 class PPHomeScreenV5 extends StatefulWidget {
   static const blueSky = const Color(0xFF78BCFF);
@@ -53,6 +52,8 @@ class _PPHomeScreenV5State extends State<PPHomeScreenV5> {
     'Thomas',
     'Johnny'
   ];
+
+  final List items = [1, 2, 3, 4, 5];
 
   Widget titleProduk() => Container(
         padding: EdgeInsets.symmetric(horizontal: 35.0),
@@ -109,6 +110,17 @@ class _PPHomeScreenV5State extends State<PPHomeScreenV5> {
         ),
       );
 
+  Widget titleLaporanPerforma() => Container(
+        padding: EdgeInsets.symmetric(horizontal: 18.0),
+        margin: EdgeInsets.only(top: 15.0),
+        child: Text('Laporan Performa',
+            style: TextStyle(
+                fontSize: 16.0,
+                fontWeight: FontWeight.bold,
+                color: Colors.black,
+                fontFamily: 'Campton')),
+      );
+
   Widget content() => Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
@@ -129,7 +141,7 @@ class _PPHomeScreenV5State extends State<PPHomeScreenV5> {
           child: Column(
             children: <Widget>[
               Container(
-                  margin: EdgeInsets.only(bottom: 10.0),
+                  margin: EdgeInsets.only(bottom: 20.0),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
@@ -165,12 +177,12 @@ class _PPHomeScreenV5State extends State<PPHomeScreenV5> {
                     ),
                   ),
                   Container(
-                    width: 65,
-                    height: 65,
+                    width: 45,
+                    height: 45,
                     decoration: BoxDecoration(
                       color: const Color(0xFFFF0000),
                       border: Border.all(color: Colors.grey, width: 1),
-                      borderRadius: BorderRadius.all(Radius.circular(15)),
+                      borderRadius: BorderRadius.all(Radius.circular(10)),
                     ),
                   )
                 ],
@@ -242,7 +254,7 @@ class _PPHomeScreenV5State extends State<PPHomeScreenV5> {
         child: CarouselSlider(
           autoPlay: true,
           height: 100.0,
-          items: [1, 2, 3, 4, 5].map((i) {
+          items: items.map((i) {
             return Builder(
               builder: (BuildContext context) {
                 return Container(
@@ -261,108 +273,127 @@ class _PPHomeScreenV5State extends State<PPHomeScreenV5> {
       aspectRatio: 16 / 7.5,
       child: new Container(
         margin: EdgeInsets.only(left: 6.0, top: 25.0),
-        child: ListView.builder(
-            scrollDirection: Axis.horizontal,
-            itemCount: name.length,
-            itemBuilder: (context, index) {
-              return Container(
-                width: MediaQuery.of(context).size.width * 0.85,
-                margin: EdgeInsets.symmetric(horizontal: 8.0),
-                child: Column(
-                  children: <Widget>[
-                    Container(
-                      height: MediaQuery.of(context).size.height * 0.19,
-                      decoration: BoxDecoration(
-                        border: Border.all(color: Colors.transparent, width: 1),
-                        borderRadius: BorderRadius.all(Radius.circular(6)),
-                        color: Colors.red,
-                      ),
-                    )
-                  ],
-                ),
-              );
-            }),
+        child: NotificationListener<OverscrollIndicatorNotification>(
+          onNotification: (overscroll) {
+            overscroll.disallowGlow();
+          },
+          child: ListView.builder(
+              scrollDirection: Axis.horizontal,
+              itemCount: name.length,
+              itemBuilder: (context, index) {
+                return Container(
+                  width: MediaQuery.of(context).size.width * 0.85,
+                  margin: EdgeInsets.symmetric(horizontal: 8.0),
+                  child: Column(
+                    children: <Widget>[
+                      Container(
+                        height: MediaQuery.of(context).size.height * 0.19,
+                        decoration: BoxDecoration(
+                          border:
+                              Border.all(color: Colors.transparent, width: 1),
+                          borderRadius: BorderRadius.all(Radius.circular(6)),
+                          color: Colors.red,
+                        ),
+                      )
+                    ],
+                  ),
+                );
+              }),
+        ),
       ));
 
   Widget buildStories() => AspectRatio(
       aspectRatio: 16 / 8,
       child: new Container(
         margin: EdgeInsets.only(left: 6.0, top: 25.0),
-        child: ListView.builder(
-            scrollDirection: Axis.horizontal,
-            itemCount: name.length,
-            itemBuilder: (context, index) {
-              return Container(
-                width: MediaQuery.of(context).size.width * 0.25,
-                margin: EdgeInsets.symmetric(horizontal: 8.0),
-                child: Column(
-                  children: <Widget>[
-                    Container(
-                      height: MediaQuery.of(context).size.height * 0.19,
-                      decoration: BoxDecoration(
-                        border: Border.all(color: Colors.transparent, width: 1),
-                        borderRadius: BorderRadius.all(Radius.circular(6)),
-                        color: Colors.blue,
+        child: NotificationListener<OverscrollIndicatorNotification>(
+          onNotification: (overscroll) {
+            overscroll.disallowGlow();
+          },
+          child: ListView.builder(
+              scrollDirection: Axis.horizontal,
+              itemCount: name.length,
+              itemBuilder: (context, index) {
+                return Container(
+                  width: MediaQuery.of(context).size.width * 0.25,
+                  margin: EdgeInsets.symmetric(horizontal: 8.0),
+                  child: Column(
+                    children: <Widget>[
+                      Container(
+                        height: MediaQuery.of(context).size.height * 0.19,
+                        decoration: BoxDecoration(
+                          border:
+                              Border.all(color: Colors.transparent, width: 1),
+                          borderRadius: BorderRadius.all(Radius.circular(6)),
+                          color: Colors.blue,
+                        ),
                       ),
-                    ),
-                    SizedBox(
-                      height: 12,
-                    ),
-                    Container(
-                      child: Center(
-                          child: Text(
-                        name[index],
-                        style: TextStyle(
-                            fontSize: 10.0,
-                            color: Colors.black,
-                            fontFamily: 'PT Sans'),
-                      )),
-                    ),
-                  ],
-                ),
-              );
-            }),
+                      SizedBox(
+                        height: 12,
+                      ),
+                      Container(
+                        child: Center(
+                            child: Text(
+                          name[index],
+                          style: TextStyle(
+                              fontSize: 10.0,
+                              color: Colors.black,
+                              fontFamily: 'PT Sans'),
+                        )),
+                      ),
+                    ],
+                  ),
+                );
+              }),
+        ),
       ));
 
-  Widget bodyBuilder() => SingleChildScrollView(
-          child: Stack(children: <Widget>[
-        SizedBox(
-          height: MediaQuery.of(context).size.height * 0.31,
-          width: double.infinity,
-          child: Container(
-            decoration: BoxDecoration(
-              gradient: new LinearGradient(
-                  begin: Alignment.topRight,
-                  end: Alignment.bottomLeft,
-                  colors: PPHomeScreenV5.kitGradientsHeader),
+  Widget bodyBuilder() => NotificationListener<OverscrollIndicatorNotification>(
+        onNotification: (overscroll) {
+          overscroll.disallowGlow();
+        },
+        child: SingleChildScrollView(
+            child: Stack(children: <Widget>[
+          SizedBox(
+            height: MediaQuery.of(context).size.height * 0.31,
+            width: double.infinity,
+            child: Container(
+              decoration: BoxDecoration(
+                gradient: new LinearGradient(
+                    begin: Alignment.topRight,
+                    end: Alignment.bottomLeft,
+                    colors: PPHomeScreenV5.kitGradientsHeader),
+              ),
             ),
           ),
-        ),
-        Container(
-            margin: EdgeInsets.only(
-                top: MediaQuery.of(context).size.height * 0.08, bottom: 25),
-            child: Column(
-              children: <Widget>[
-                Stack(children: <Widget>[
-                  Container(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: <Widget>[
-                        header(),
-                        cardKomisi(),
-                        cardBagiKode(),
-                        carouselBanner(),
-                        buildStories(),
-                        carouselBanner2(),
-                        buildProductMenu(),
-                        cardPartnerTerdekat()
-                      ],
-                    ),
-                  )
-                ])
-              ],
-            ))
-      ]));
+          Container(
+              margin: EdgeInsets.only(
+                  top: MediaQuery.of(context).size.height * 0.08, bottom: 25),
+              child: Column(
+                children: <Widget>[
+                  Stack(children: <Widget>[
+                    Container(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: <Widget>[
+                          header(),
+                          cardKomisi(),
+                          cardBagiKode(),
+                          carouselBanner(),
+                          buildStories(),
+                          carouselBanner2(),
+                          buildProductMenu(),
+                          cardPartnerTerdekat(),
+                          titleLaporanPerforma(),
+                          laporanPerforma()
+                        ],
+                      ),
+                    )
+                  ])
+                ],
+              ))
+        ])),
+      );
 
   Widget cardBagiKode() => AtomicCustomCard(
         marginLeft: 20.0,
@@ -472,31 +503,36 @@ class _PPHomeScreenV5State extends State<PPHomeScreenV5> {
             // margin: EdgeInsets.only(top: 10),
             // padding: const EdgeInsets.symmetric(horizontal: 15.0),
             height: 75,
-            child: ListView.builder(
-                itemCount: ProductModel.dummyData.length,
-                scrollDirection: Axis.horizontal,
-                itemBuilder: (context, index) {
-                  return Container(
-                    padding: EdgeInsets.symmetric(horizontal: 10.0),
-                    margin: EdgeInsets.only(
-                        top: 15, left: 10, right: 10, bottom: 10),
-                    child: Column(
-                      children: <Widget>[
-                        Image.asset(
-                          ProductModel.dummyData[index].image,
-                          height: 30,
-                          fit: BoxFit.fitHeight,
-                        ),
-                        SizedBox(
-                          height: 5,
-                        ),
-                        Text('0.1 km',
-                            style: TextStyle(
-                                fontSize: 10.0, fontFamily: 'PT Sans'))
-                      ],
-                    ),
-                  );
-                }),
+            child: NotificationListener<OverscrollIndicatorNotification>(
+              onNotification: (overscroll) {
+                overscroll.disallowGlow();
+              },
+              child: ListView.builder(
+                  itemCount: ProductModel.dummyData.length,
+                  scrollDirection: Axis.horizontal,
+                  itemBuilder: (context, index) {
+                    return Container(
+                      padding: EdgeInsets.symmetric(horizontal: 10.0),
+                      margin: EdgeInsets.only(
+                          top: 15, left: 10, right: 10, bottom: 10),
+                      child: Column(
+                        children: <Widget>[
+                          Image.asset(
+                            ProductModel.dummyData[index].image,
+                            height: 30,
+                            fit: BoxFit.fitHeight,
+                          ),
+                          SizedBox(
+                            height: 5,
+                          ),
+                          Text('0.1 km',
+                              style: TextStyle(
+                                  fontSize: 10.0, fontFamily: 'PT Sans'))
+                        ],
+                      ),
+                    );
+                  }),
+            ),
           )
         ],
       );
@@ -537,6 +573,93 @@ class _PPHomeScreenV5State extends State<PPHomeScreenV5> {
           )
         ],
       );
+
+  Widget laporanPerforma() => Padding(
+        padding: EdgeInsets.symmetric(horizontal: 10.0),
+        child: Column(
+          children: <Widget>[
+            AtomicCustomCard(
+              marginLeft: 20.0,
+              marginRight: 20.0,
+              marginTop: 30.0,
+              cardColor: Colors.white,
+              keyValue: 'custom_card',
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              listOfWidget: <Widget>[
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: <Widget>[
+                    Container(
+                      child: Icon(
+                        Icons.insert_chart,
+                        size: 35,
+                      ),
+                    ),
+                    Container(
+                      width: MediaQuery.of(context).size.width * 0.5,
+                      margin: EdgeInsets.only(left: 20),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: <Widget>[
+                          Text('Performa Kamu',
+                              style: TextStyle(
+                                  fontSize: 14.0,
+                                  fontWeight: FontWeight.bold,
+                                  fontFamily: 'Campton')),
+                          Text('per 21 Agustus 2019',
+                              style: TextStyle(
+                                  fontSize: 10.0, fontFamily: 'Campton')),
+                        ],
+                      ),
+                    )
+                  ],
+                ),
+                SizedBox(
+                  height: 10.0,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: <Widget>[
+                    Container(
+                      width: MediaQuery.of(context).size.width / 2,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: <Widget>[
+                          Text('Komisi Bulan Ini',
+                              style: TextStyle(
+                                  fontSize: 14.0, fontFamily: 'Campton')),
+                          Text('Rp480.000',
+                              style: TextStyle(
+                                  fontSize: 10.0,
+                                  fontWeight: FontWeight.bold,
+                                  fontFamily: 'Campton')),
+                        ],
+                      ),
+                    ),
+                    Container(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: <Widget>[
+                          Text('Refferal',
+                              style: TextStyle(
+                                  fontSize: 14.0, fontFamily: 'Campton')),
+                          Text('32 Pelanggan',
+                              style: TextStyle(
+                                  fontSize: 10.0,
+                                  fontWeight: FontWeight.bold,
+                                  fontFamily: 'Campton')),
+                        ],
+                      ),
+                    )
+                  ],
+                )
+              ],
+            ),
+          ],
+        ),
+      );
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(backgroundColor: Colors.white, body: bodyBuilder());

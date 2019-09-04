@@ -4,6 +4,7 @@ import 'package:example/component_list/input_component.dart';
 import 'package:example/component_list/listtile_component.dart';
 import 'package:example/component_list/pp_home.dart';
 import 'package:example/component_list/pp_homev5.dart';
+import 'package:example/component_list/pp_homev6.dart';
 import 'package:example/component_list/pp_inbox.dart';
 import 'package:example/component_list/typography_component.dart';
 import 'package:flutter/material.dart';
@@ -24,9 +25,10 @@ class MyApp extends StatelessWidget {
         '/listtile': (context) => ListitleComponent(),
         '/homepp': (context) => PPHomeScreen(),
         '/homeppv5': (context) => PPHomeScreenV5(),
+        '/homeppv6': (context) => PPHomeScreenV6(),
         '/inboxpp': (context) => PPInboxScreen()
       },
-      theme: ThemeData(primaryColor: Colors.grey[850]),
+      theme: ThemeData(primaryColor: Colors.white),
       home: HomeScreen(),
     );
   }
@@ -97,6 +99,13 @@ class _HomeScreenState extends State<HomeScreen> {
                     title: Text("Home Partner Portal V5"),
                     onTap: () {
                       Navigator.pushNamed(context, '/homeppv5');
+                    },
+                  ),
+                  ListTile(
+                    trailing: Icon(Icons.arrow_forward_ios),
+                    title: Text("Home Partner Portal V6"),
+                    onTap: () {
+                      Navigator.pushNamed(context, '/homeppv6');
                     },
                   ),
                   ListTile(

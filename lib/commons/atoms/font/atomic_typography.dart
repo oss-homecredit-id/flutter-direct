@@ -2,6 +2,7 @@ part of flutter_direct;
 
 enum FontType { Title1, Title2, Title3, Body1, Body2, TextButton, Caption }
 enum FontFamily { Campton, Helvetica, Raleway }
+enum FontBold { Bold, Regular, Medium }
 
 class AtomicTypography extends StatelessWidget {
   final String keyValue;
@@ -10,6 +11,7 @@ class AtomicTypography extends StatelessWidget {
   final Color color;
   final String data;
   final FontWeight fontWeight;
+  final FontBold fontBold;
   final TextAlign textAlign;
   final bool ellipsisText;
   final double lineHeight;
@@ -24,6 +26,7 @@ class AtomicTypography extends StatelessWidget {
     this.fontWeight,
     this.ellipsisText,
     this.lineHeight,
+    this.fontBold,
   });
 
   @override
@@ -54,15 +57,9 @@ class AtomicTypography extends StatelessWidget {
                                 ? 16
                                 : fontType == FontType.Caption ? 12 : 12,
         color: color,
-        fontWeight: fontType == FontType.Title1
-            ? FontWeight.w600
-            : fontType == FontType.Title2
-                ? FontWeight.w500
-                : fontType == FontType.Title3
-                    ? FontWeight.w500
-                    : fontType == FontType.TextButton
-                        ? FontWeight.bold
-                        : fontWeight,
+        fontWeight: fontBold == FontBold.Bold
+            ? FontWeight.bold
+            : fontBold == FontBold.Medium ? FontWeight.w600 : FontWeight.w500,
       ),
     );
   }

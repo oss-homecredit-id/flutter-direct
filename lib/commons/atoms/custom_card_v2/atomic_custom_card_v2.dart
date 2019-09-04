@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 enum CustomCardBg { Color, Image }
 
-class AtomicCustomCard extends StatelessWidget {
+class AtomicCustomCardV2 extends StatelessWidget {
   final double marginLeft;
   final double marginRight;
   final double marginTop;
@@ -15,7 +15,7 @@ class AtomicCustomCard extends StatelessWidget {
   final String image;
   final List<Widget> listOfWidget;
 
-  AtomicCustomCard(
+  AtomicCustomCardV2(
       {this.marginLeft,
       this.marginRight,
       this.marginTop,
@@ -30,13 +30,21 @@ class AtomicCustomCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
+    return Container(
       key: Key(keyValue ?? ''),
       margin:
           EdgeInsets.only(left: marginLeft, right: marginRight, top: marginTop),
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8.0)),
-      elevation: 2.0,
-      color: customCardBg == CustomCardBg.Color ? cardColor : Colors.white,
+      decoration: BoxDecoration(
+          color: customCardBg == CustomCardBg.Color ? cardColor : Colors.white,
+          border: Border.all(color: Colors.transparent, width: 1.0),
+          boxShadow: [
+            new BoxShadow(
+              color: Colors.grey,
+              offset: new Offset(1.0, 3.0),
+              blurRadius: 1.0,
+            )
+          ],
+          borderRadius: new BorderRadius.all(new Radius.circular(8.0))),
       child: Container(
         padding: EdgeInsets.only(top: 18, bottom: 18, left: 15, right: 15),
         child: Stack(
