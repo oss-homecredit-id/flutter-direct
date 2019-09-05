@@ -1,3 +1,9 @@
+## [0.0.5+1] - Release
+
+* Change Fontweight to dynamic
+* Remove FontBold
+* Fix minnor issue
+
 ## [0.0.5] - Release
 
 * Image Component

@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+part of flutter_direct;
 
 enum InputType { Authentication, Search }
 enum FormType { Username, Password }
