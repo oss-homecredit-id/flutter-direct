@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_direct/commons/atoms/list/atomic_listtile.dart';
+import 'package:flutter_direct/flutter_direct.dart';
 
 class ListitleComponent extends StatelessWidget{
   @override

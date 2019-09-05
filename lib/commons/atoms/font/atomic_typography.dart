@@ -11,7 +11,6 @@ class AtomicTypography extends StatelessWidget {
   final Color color;
   final String data;
   final FontWeight fontWeight;
-  final FontBold fontBold;
   final TextAlign textAlign;
   final bool ellipsisText;
   final double lineHeight;
@@ -26,7 +25,6 @@ class AtomicTypography extends StatelessWidget {
     this.fontWeight,
     this.ellipsisText,
     this.lineHeight,
-    this.fontBold,
   });
 
   @override
@@ -44,7 +42,7 @@ class AtomicTypography extends StatelessWidget {
       style: TextStyle(
         fontFamily: getFontFamilyType(fontFamily),
         fontSize: fontType == FontType.Title1
-            ? 22
+            ? 21
             : fontType == FontType.Title2
                 ? 20
                 : fontType == FontType.Title3
@@ -55,11 +53,9 @@ class AtomicTypography extends StatelessWidget {
                             ? 14
                             : fontType == FontType.TextButton
                                 ? 16
-                                : fontType == FontType.Caption ? 12 : 12,
+                                : fontType == FontType.Caption ? 13 : 12,
         color: color,
-        fontWeight: fontBold == FontBold.Bold
-            ? FontWeight.bold
-            : fontBold == FontBold.Medium ? FontWeight.w600 : FontWeight.w500,
+        fontWeight: fontWeight,
       ),
     );
   }

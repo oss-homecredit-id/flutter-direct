@@ -1,6 +1,6 @@
-import 'package:flutter/material.dart';
+part of flutter_direct;
 
-enum CustomCardBg { Color, Image }
+enum CustomCardBgv2 { Color, Image }
 
 class AtomicCustomCardV2 extends StatelessWidget {
   final double marginLeft;
@@ -11,7 +11,7 @@ class AtomicCustomCardV2 extends StatelessWidget {
   final String keyValue;
   final MainAxisAlignment mainAxisAlignment;
   final CrossAxisAlignment crossAxisAlignment;
-  final CustomCardBg customCardBg;
+  final CustomCardBgv2 customCardBg;
   final String image;
   final List<Widget> listOfWidget;
 

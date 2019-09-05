@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_direct/commons/atoms/input/atomic_input.dart';
+import 'package:flutter_direct/flutter_direct.dart';
 
 class InputComponent extends StatelessWidget{
   @override

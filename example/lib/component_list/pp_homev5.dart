@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:flutter_direct/commons/atoms/custom_card/atomic_custom_card.dart';
+import 'package:flutter_direct/flutter_direct.dart';
 
 class PPHomeScreenV5 extends StatefulWidget {
   static const blueSky = const Color(0xFF78BCFF);

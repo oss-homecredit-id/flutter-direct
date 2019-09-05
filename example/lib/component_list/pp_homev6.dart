@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_direct/commons/atoms/custom_card/atomic_custom_card.dart';
 import 'package:flutter_direct/flutter_direct.dart';
 
 class PPHomeScreenV6 extends StatefulWidget {
@@ -26,7 +25,6 @@ class _PPHomeScreenV6State extends State<PPHomeScreenV6> {
                 fontFamily: FontFamily.Campton,
                 fontType: FontType.Caption,
                 color: Colors.black,
-                fontBold: FontBold.Bold,
                 data: 'Lihat Komisi Anda Bulan Ini',
               ),
               Icon(Icons.keyboard_arrow_right)
@@ -43,7 +41,6 @@ class _PPHomeScreenV6State extends State<PPHomeScreenV6> {
             fontType: FontType.Title2,
             color: Color(0xFFe11931),
             fontWeight: FontWeight.w900,
-            fontBold: FontBold.Bold,
             data: 'TIPPERS.DEV',
           )));
 
@@ -56,7 +53,6 @@ class _PPHomeScreenV6State extends State<PPHomeScreenV6> {
                 fontFamily: FontFamily.Campton,
                 fontType: FontType.Title1,
                 color: Colors.black,
-                fontBold: FontBold.Medium,
                 data: 'Halo, ',
               )),
           Container(
@@ -67,7 +63,6 @@ class _PPHomeScreenV6State extends State<PPHomeScreenV6> {
                 fontType: FontType.Title1,
                 color: Colors.black,
                 data: 'Gordon!',
-                fontBold: FontBold.Bold,
               )),
         ],
       );
@@ -113,7 +108,6 @@ class _PPHomeScreenV6State extends State<PPHomeScreenV6> {
                 color: Colors.black,
                 fontWeight: FontWeight.bold,
                 data: 'Kode Tippers Anda:',
-                fontBold: FontBold.Bold,
               ),
               SizedBox(height: 5),
               AtomicTypography(
@@ -122,7 +116,6 @@ class _PPHomeScreenV6State extends State<PPHomeScreenV6> {
                 color: Colors.black,
                 fontWeight: FontWeight.bold,
                 data: 'TP19042601095',
-                fontBold: FontBold.Bold,
               ),
             ],
           ),
