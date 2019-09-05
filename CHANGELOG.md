@@ -1,3 +1,8 @@
+## [0.0.5] - Release
+
+* Image Component
+* Grid Component
+
 ## [0.0.4] - Release
 
 * Home v5
