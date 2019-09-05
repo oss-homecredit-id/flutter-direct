@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+part of flutter_direct;
 
 enum ListViewType { ListView, ListViewBuilder }
 

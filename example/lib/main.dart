@@ -1,14 +1,17 @@
 import 'package:example/component_list/button_component.dart';
 import 'package:example/component_list/color_component.dart';
 import 'package:example/component_list/input_component.dart';
+import 'package:example/component_list/image_component.dart';
+
 import 'package:example/component_list/listtile_component.dart';
 import 'package:example/component_list/pp_home.dart';
 import 'package:example/component_list/pp_homev5.dart';
 import 'package:example/component_list/pp_homev6.dart';
 import 'package:example/component_list/pp_inbox.dart';
+import 'package:example/component_list/grid_component.dart';
+
 import 'package:example/component_list/typography_component.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_direct/flutter_direct.dart';
 
 void main() => runApp(MyApp());
 
@@ -26,7 +29,9 @@ class MyApp extends StatelessWidget {
         '/homepp': (context) => PPHomeScreen(),
         '/homeppv5': (context) => PPHomeScreenV5(),
         '/homeppv6': (context) => PPHomeScreenV6(),
-        '/inboxpp': (context) => PPInboxScreen()
+        '/inboxpp': (context) => PPInboxScreen(),
+        '/image': (context) => ImageComponent(),
+        '/grid': (context) => GridComponent()
       },
       theme: ThemeData(primaryColor: Colors.white),
       home: HomeScreen(),
@@ -115,6 +120,20 @@ class _HomeScreenState extends State<HomeScreen> {
                       Navigator.pushNamed(context, '/inboxpp');
                     },
                   ),
+                  ListTile(
+                    trailing: Icon(Icons.arrow_forward_ios),
+                    title: Text("Image Component"),
+                    onTap: () {
+                      Navigator.pushNamed(context, '/image');
+                    },
+                  ),
+                  ListTile(
+                    trailing: Icon(Icons.arrow_forward_ios),
+                    title: Text("Grid Component"),
+                    onTap: () {
+                      Navigator.pushNamed(context, '/grid');
+                    },
+                  )
                 ],
               ),
             )));
