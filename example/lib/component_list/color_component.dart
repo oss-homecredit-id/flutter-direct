@@ -32,7 +32,7 @@ class ColorComponent extends StatelessWidget {
             Container(
               height: 80,
               width: double.infinity,
-              color: AtomicColor.secondaryColor,
+              color: AtomicColor.primaryColor,
               child: Center(
                   child: Text(
                 "Secondary Color",

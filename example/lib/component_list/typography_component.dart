@@ -52,6 +52,15 @@ class TypographyComponent extends StatelessWidget {
                     data: 'Raleway - Caption',
                   ),
                 ),
+                 Container(
+                  padding: EdgeInsets.symmetric(horizontal: 16),
+                  child: AtomicFontAppbar(
+                    data: "Pesan",
+                    size: 22,
+                    fontWeight: FontWeight.bold,
+                    color: AtomicColor.primaryColor,
+                  ),
+                ),
               ],
             ),
           )),
