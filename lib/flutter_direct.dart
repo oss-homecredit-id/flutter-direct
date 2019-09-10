@@ -6,6 +6,8 @@ part 'commons/atoms/buttons/atomic_button.dart';
 part 'commons/atoms/color/atomic_color.dart';
 part 'commons/atoms/font/atomic_font.dart';
 part 'commons/atoms/font/atomic_typography.dart';
+part 'commons/atoms/font/atomic_font_appbar.dart';
+
 part 'commons/atoms/image/atomic_image.dart';
 part 'commons/atoms/custom_card/atomic_custom_card.dart';
 part 'commons/atoms/custom_card_v2/atomic_custom_card_v2.dart';

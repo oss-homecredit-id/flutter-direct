@@ -80,7 +80,7 @@ class AtomicButton extends StatelessWidget {
         return AtomicColor.primaryColor;
         break;
       case ButtonType.Secondary:
-        return AtomicColor.secondaryColor;
+        return AtomicColor.primaryColor;
         break;
       case ButtonType.Disable:
         return AtomicColor.disableColor;
