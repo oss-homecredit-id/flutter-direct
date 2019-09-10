@@ -1,8 +1,6 @@
-## [0.0.5+1] - Release
+## [0.0.5+2] - Release
 
-* Change Fontweight to dynamic
-* Remove FontBold
-* Fix minnor issue
+* Add font appbar
 
 ## [0.0.5] - Release
 

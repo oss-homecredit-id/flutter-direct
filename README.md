@@ -1,14 +1,32 @@
 # flutter_direct
 
-Design System for Home Credit Indonesia Tippers App.
+Flutter Direct is a Design System for Home Credit Indonesia Tippers App.
 
-## Getting Started
+## Usage
 
-This project is a starting point for a Dart
-[package](https://flutter.dev/developing-packages/),
-a library module containing code that can be shared easily across
-multiple Flutter or Dart projects.
+To use this plugin, add flutter_direct as a [dependency in your pubspec.yaml file](https://flutter.dev/docs/development/packages-and-plugins/using-packages).
 
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.dev/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.
+### Example
+
+
+Please see the example app of this plugin for a full example.
+
+```dart
+ Container(
+    height: 80,
+    width: double.infinity,
+    color: AtomicColor.primaryColor,
+    child: Center(
+    child: Text(
+    "Secondary Color",
+        style: TextStyle(color: Colors.white),
+        )),
+    ),
+
+AtomicInput(
+    keyValue: 'password',
+    hintText: 'PASSWORD',
+    inputType: InputType.Authentication,
+    formType: FormType.Password,
+),
+```
