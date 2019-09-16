@@ -206,83 +206,85 @@ class _PPInboxScreenState extends State<PPInboxScreen>
   TabController _controller;
 
   Widget buildContent() => Container(
-          decoration: BoxDecoration(color: Colors.white),
-          height: MediaQuery.of(context).size.height * 10,
-          padding: EdgeInsets.only(bottom: 20),
-          child: ListView.builder(
-            shrinkWrap: true,
-            itemCount: ChatModel.dummyData.length,
-            itemBuilder: (context, index) {
-              ChatModel _model = ChatModel.dummyData[index];
-              return Container(
-                //padding: const EdgeInsets.all(10.0),
-                child: new Slidable(
-                  actionPane: SlidableDrawerActionPane(),
-                  child: ListTile(
-                    leading: Container(
-                      width: 38,
-                      height: 38,
-                      decoration: BoxDecoration(
-                        color: const Color(0xFFF4F4F4),
-                        borderRadius: BorderRadius.all(Radius.circular(6)),
-                      ),
-                      child: Center(
-                        child:
-                            Text('Rp', style: TextStyle(fontFamily: 'PtSans')),
-                      ),
+        decoration: BoxDecoration(color: Colors.white),
+        height: MediaQuery.of(context).size.height * 10,
+        padding: EdgeInsets.only(bottom: 20),
+        child: ListView.builder(
+          shrinkWrap: true,
+          itemCount: ChatModel.dummyData.length,
+          itemBuilder: (context, index) {
+            ChatModel _model = ChatModel.dummyData[index];
+            return Container(
+              //padding: const EdgeInsets.all(10.0),
+              child: new Slidable(
+                actionPane: SlidableDrawerActionPane(),
+                child: ListTile(
+                  leading: Container(
+                    width: 38,
+                    height: 38,
+                    decoration: BoxDecoration(
+                      color: const Color(0xFFF4F4F4),
+                      borderRadius: BorderRadius.all(Radius.circular(6)),
                     ),
-                    title: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: <Widget>[
-                        Text(_model.name,
-                            style: TextStyle(
-                                fontFamily: 'PtSans',
-                                fontWeight: FontWeight.bold,
-                                fontSize: 13)),
-                        Text(_model.datetime,
-                            style: TextStyle(
-                                fontFamily: 'PtSans',
-                                fontWeight: FontWeight.bold,
-                                fontSize: 12)),
-                      ],
-                    ),
-                    subtitle: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: <Widget>[
-                        SizedBox(
-                          height: 10.0,
-                        ),
-                        Text(_model.message,
-                            style: TextStyle(
-                                fontFamily: 'PtSans',
-                                fontWeight: FontWeight.bold,
-                                fontSize: 13)),
-                        SizedBox(
-                          height: 20.0,
-                        ),
-                      ],
+                    child: Center(
+                      child: Text('Rp', style: TextStyle(fontFamily: 'PtSans')),
                     ),
                   ),
-                   actions: <Widget>[
-                      IconSlideAction(
-                        color: Colors.orange,
-                        //icon: Icons.star_border,
-                        iconWidget: Icon(Icons.star_border,color: Colors.white,),
-                        onTap: () => {},
+                  title: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[
+                      Text(_model.name,
+                          style: TextStyle(
+                              fontFamily: 'PtSans',
+                              fontWeight: FontWeight.bold,
+                              fontSize: 13)),
+                      Text(_model.datetime,
+                          style: TextStyle(
+                              fontFamily: 'PtSans',
+                              fontWeight: FontWeight.bold,
+                              fontSize: 12)),
+                    ],
+                  ),
+                  subtitle: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      SizedBox(
+                        height: 10.0,
+                      ),
+                      Text(_model.message,
+                          style: TextStyle(
+                              fontFamily: 'PtSans',
+                              fontWeight: FontWeight.bold,
+                              fontSize: 13)),
+                      SizedBox(
+                        height: 20.0,
                       ),
                     ],
-                    secondaryActions: <Widget>[
-                      IconSlideAction(
-                        color: Colors.red,
-                        icon: Icons.delete,
-                        onTap: () => {},
-                      ),
-                    ], 
+                  ),
                 ),
-              );
-            },
-          ),
-        );
+                actions: <Widget>[
+                  IconSlideAction(
+                    color: Colors.orange,
+                    //icon: Icons.star_border,
+                    iconWidget: Icon(
+                      Icons.star_border,
+                      color: Colors.white,
+                    ),
+                    onTap: () => {},
+                  ),
+                ],
+                secondaryActions: <Widget>[
+                  IconSlideAction(
+                    color: Colors.red,
+                    icon: Icons.delete,
+                    onTap: () => {},
+                  ),
+                ],
+              ),
+            );
+          },
+        ),
+      );
 
   @override
   void initState() {

@@ -1,7 +1,5 @@
 part of flutter_direct;
 
-enum ListViewType { ListView, ListViewBuilder }
-
 class MoleculeListView extends StatelessWidget {
   final Widget widget;
   final int length;
