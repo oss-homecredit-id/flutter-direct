@@ -14,23 +14,25 @@ class AtomicTypography extends StatelessWidget {
   final TextAlign textAlign;
   final bool ellipsisText;
   final double lineHeight;
+  final int maxLines;
 
-  AtomicTypography({
-    this.keyValue,
-    this.fontType,
-    this.fontFamily,
-    this.color,
-    this.data,
-    this.textAlign,
-    this.fontWeight,
-    this.ellipsisText,
-    this.lineHeight,
-  });
+  AtomicTypography(
+      {this.keyValue,
+      this.fontType,
+      this.fontFamily,
+      this.color,
+      this.data,
+      this.textAlign,
+      this.fontWeight,
+      this.ellipsisText,
+      this.lineHeight,
+      this.maxLines});
 
   @override
   Widget build(BuildContext context) {
     return Text(
       data ?? 'no text',
+      maxLines: maxLines,
       key: Key(keyValue ?? ''),
       overflow:
           ellipsisText == true ? TextOverflow.ellipsis : TextOverflow.clip,
