@@ -63,13 +63,13 @@ class AtomicTypography extends StatelessWidget {
   getFontFamilyType(FontFamily fontFamily) {
     switch (fontFamily) {
       case FontFamily.Campton:
-        return AtomicFont.campton_font;
+        return AtomicFont.Campton;
         break;
       case FontFamily.Raleway:
-        return AtomicFont.raleway_font;
+        return AtomicFont.Raleway;
         break;
       case FontFamily.Helvetica:
-        return AtomicFont.helvetica_font;
+        return AtomicFont.Helvetica;
         break;
       default:
     }

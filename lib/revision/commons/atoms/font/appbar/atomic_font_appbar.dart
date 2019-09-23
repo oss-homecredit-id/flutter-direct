@@ -6,13 +6,15 @@ class AtomicFontAppbar extends StatelessWidget {
   final double size;
   final Color color;
   final FontWeight fontWeight;
+  final FontFamily fontFamily;
 
   AtomicFontAppbar({
     this.data,
     this.keyValue,
     this.size,
     this.color,
-    this.fontWeight
+    this.fontWeight,
+    this.fontFamily
   });
 
   @override
@@ -28,10 +30,10 @@ class AtomicFontAppbar extends StatelessWidget {
       ),
       textScaleFactor: 1.0,
       style: TextStyle(
-        fontFamily: "Campton",
-        fontSize: size ?? 18,
-        color: color ?? Colors.green,
-        fontWeight: fontWeight,
+        fontFamily: fontFamily ?? AtomicFont.Campton,
+        fontSize: size ?? 22,
+        color: color ?? AtomicColor.primaryColor,
+        fontWeight: fontWeight ?? FontWeight.bold,
       ),
     );
   }
