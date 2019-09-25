@@ -1,3 +1,8 @@
+## [0.0.6] - Release
+
+* Add custom stepper
+* Add atomic backdrop
+
 ## [0.0.5+2] - Release
 
 * Add font appbar
