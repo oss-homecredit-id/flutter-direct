@@ -23,3 +23,8 @@ part 'revision/commons/atoms/font/atomic_font.dart';
 part 'revision/commons/atoms/font/appbar/atomic_font_appbar.dart';
 
 part 'revision/commons/atoms/font/general/atomic_font_general.dart';
+
+part 'revision/commons/molecules/backdrop/atomic_backdrop.dart';
+part 'revision/commons/molecules/backdrop/custom_stepper.dart';
+
+

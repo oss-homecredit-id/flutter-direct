@@ -51,6 +51,8 @@ flutter:
    - assets/images/komisi-bg.png
    - assets/images/welcome.png
    - assets/images/female.png
+   - assets/images/qr-code.png
+
   # assets:
   #  - images/a_dot_burr.jpeg
   #  - images/a_dot_ham.jpeg

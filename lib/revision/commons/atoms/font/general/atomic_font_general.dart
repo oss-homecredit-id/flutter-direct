@@ -3,12 +3,10 @@ part of flutter_direct;
 class AtomicFontGeneral extends StatelessWidget {
   final String data;
   final String keyValue;
-  final double size;
-  final Color color;
   final TextStyle style;
 
   AtomicFontGeneral(
-      {this.data, this.keyValue, this.size, this.color, this.style});
+      {this.data, this.keyValue, this.style});
 
   @override
   Widget build(BuildContext context) {

@@ -11,6 +11,7 @@ import 'package:example/component_list/pp_inbox.dart';
 import 'package:example/component_list/grid_component.dart';
 
 import 'package:example/component_list/typography_component.dart';
+import 'package:example/revision/backdrop/backdrop_screen.dart';
 import 'package:example/revision/font/font_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_direct/flutter_direct.dart';
@@ -34,7 +35,8 @@ class MyApp extends StatelessWidget {
         // '/inboxpp': (context) => PPInboxScreen(),
         // '/image': (context) => ImageComponent(),
         // '/grid': (context) => GridComponent()
-        '/font': (context) => FontScreen()
+        '/font': (context) => FontScreen(),
+        '/backdrop': (context) => BackdropScreen()
       },
       theme: ThemeData(primaryColor: Colors.white),
       home: HomeScreen(),
@@ -65,6 +67,13 @@ class _HomeScreenState extends State<HomeScreen> {
                     title: Text("Font Component"),
                     onTap: () {
                       Navigator.pushNamed(context, '/font');
+                    },
+                  ),
+                  ListTile(
+                    trailing: Icon(Icons.arrow_forward_ios),
+                    title: Text("Backdrop Component"),
+                    onTap: () {
+                      Navigator.pushNamed(context, '/backdrop');
                     },
                   ),
                   // ListTile(
