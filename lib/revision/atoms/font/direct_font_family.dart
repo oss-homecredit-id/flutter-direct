@@ -1,7 +1,7 @@
 part of flutter_direct;
 
-class AtomicFont {
-  static const String Helvetica = "HelveticaNeue";
+class DirectFontFamily {
   static const String Raleway = "Raleway";
   static const String Campton = "Campton";
+  static const String PtSans = "PtSans";
 }
