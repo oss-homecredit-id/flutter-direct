@@ -1,7 +1,7 @@
 part of flutter_direct;
 
 enum FontType { Title1, Title2, Title3, Body1, Body2, TextButton, Caption }
-enum FontFamily { Campton, Helvetica, Raleway }
+enum FontFamily { Campton, Raleway }
 enum FontBold { Bold, Regular, Medium }
 
 class AtomicTypography extends StatelessWidget {
@@ -68,9 +68,7 @@ class AtomicTypography extends StatelessWidget {
       case FontFamily.Raleway:
         return DirectFontFamily.Raleway;
         break;
-      case FontFamily.Helvetica:
-        return DirectFontFamily.Helvetica;
-        break;
+
       default:
     }
   }

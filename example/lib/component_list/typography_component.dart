@@ -16,16 +16,6 @@ class TypographyComponent extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            Container(
-              padding: EdgeInsets.symmetric(horizontal: 16),
-              child: AtomicTypography(
-                fontFamily: FontFamily.Helvetica,
-                fontType: FontType.Title1,
-                color: DirectColor.primaryColor,
-                fontWeight: FontWeight.w500,
-                data: 'Helvetica Neue - Title 1',
-              ),
-            ),
             SizedBox(
               height: 24,
             ),

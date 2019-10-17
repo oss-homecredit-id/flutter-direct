@@ -39,11 +39,6 @@ class FontScreen extends StatelessWidget {
                 SizedBox(
                   height: 10,
                 ),
-                DirectFont(
-                  data: 'Font Family - Helvetica',
-                  fontFamily: DirectFontFamily.Helvetica,
-                  color: Colors.white,
-                ),
                 SizedBox(
                   height: 10,
                 ),

@@ -42,13 +42,6 @@ flutter:
   # example:
  
   fonts:
-    - family: HelveticaNeue
-      fonts:
-        - asset: packages/flutter_direct/fonts/HelveticaNeue.ttf
-        - asset: packages/flutter_direct/fonts/HelveticaNeue-Italic.ttf
-          style: italic
-        - asset: packages/flutter_direct/fonts/HelveticaNeue-Medium.ttf
-        - asset: packages/flutter_direct/fonts/HelveticaNeue-Bold.ttf
     - family: Campton
       fonts:
         - asset: packages/flutter_direct/fonts/Campton-Book.otf
