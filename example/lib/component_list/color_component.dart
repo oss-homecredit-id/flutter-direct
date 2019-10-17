@@ -19,7 +19,7 @@ class ColorComponent extends StatelessWidget {
             Container(
               height: 80,
               width: double.infinity,
-              color: AtomicColor.primaryColor,
+              color: DirectColor.primaryColor,
               child: Center(
                   child: Text(
                 "Primary Color",
@@ -32,7 +32,7 @@ class ColorComponent extends StatelessWidget {
             Container(
               height: 80,
               width: double.infinity,
-              color: AtomicColor.primaryColor,
+              color: DirectColor.primaryColor,
               child: Center(
                   child: Text(
                 "Secondary Color",
@@ -45,12 +45,12 @@ class ColorComponent extends StatelessWidget {
             Container(
               height: 80,
               width: double.infinity,
-              color: AtomicColor.disableColor,
+              color: DirectColor.disableColor,
               child: Center(
                   child: Text(
-                    "Disable Color",
-                    style: TextStyle(color: Colors.white),
-                  )),
+                "Disable Color",
+                style: TextStyle(color: Colors.white),
+              )),
             )
           ],
         ),

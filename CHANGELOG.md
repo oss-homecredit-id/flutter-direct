@@ -1,3 +1,10 @@
+## [0.0.7] - Release
+
+* Add revision button
+* Add revision font
+* Add revision text
+* Add revision appbar font
+
 ## [0.0.6] - Release
 
 * Add custom stepper
