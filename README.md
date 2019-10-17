@@ -15,18 +15,20 @@ Please see the example app of this plugin for a full example.
  Container(
     height: 80,
     width: double.infinity,
-    color: AtomicColor.primaryColor,
+    color: DirectColor.primaryColor,
     child: Center(
     child: Text(
-    "Secondary Color",
+    "Primary Color",
         style: TextStyle(color: Colors.white),
         )),
     ),
 
-AtomicInput(
-    keyValue: 'password',
-    hintText: 'PASSWORD',
-    inputType: InputType.Authentication,
-    formType: FormType.Password,
-),
+ DirectFilledButton(
+    text: "Active Button",
+    fontSize: 16,
+    buttonState: DirectButtonState.Active,
+    fontFamily: DirectFontFamily.PtSans,
+    fontWeight: FontWeight.normal,
+    onTap: () {},
+    ),
 ```
