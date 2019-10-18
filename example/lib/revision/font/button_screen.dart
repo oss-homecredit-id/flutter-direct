@@ -44,6 +44,18 @@ class ButtonScreen extends StatelessWidget {
                   onTap: () {},
                 ),
                 SizedBox(
+                  height: 20,
+                ),
+                DirectFilledButton(
+                  text: "Tapable Button",
+                  buttonState: DirectButtonState.Tapable,
+                  color: DirectColor.disableColor,
+                  fontSize: 16,
+                  fontFamily: DirectFontFamily.PtSans,
+                  fontWeight: FontWeight.normal,
+                  onTap: () {},
+                ),
+                SizedBox(
                   height: 10,
                 ),
                 DirectFont(
