@@ -9,6 +9,7 @@ class DirectFilledButton extends StatelessWidget {
   final String fontFamily;
   final FontWeight fontWeight;
   final DirectButtonState buttonState;
+  final Color color;
 
   DirectFilledButton(
       {this.keyValue,
@@ -17,7 +18,8 @@ class DirectFilledButton extends StatelessWidget {
       this.fontSize,
       this.fontFamily,
       this.fontWeight,
-      this.buttonState});
+      this.buttonState,
+      this.color});
 
   @override
   Widget build(BuildContext context) {
@@ -29,12 +31,17 @@ class DirectFilledButton extends StatelessWidget {
           decoration: BoxDecoration(
             color: buttonState == DirectButtonState.Active
                 ? DirectColor.primaryColor
-                : DirectColor.disableColor,
+                : buttonState == DirectButtonState.Tapable
+                    ? color
+                    : DirectColor.disableColor,
             borderRadius: borderRadiusDefault,
             shape: BoxShape.rectangle,
           ),
           child: InkWell(
-            onTap: buttonState == DirectButtonState.Active ? onTap : null,
+            onTap: buttonState == DirectButtonState.Active ||
+                    buttonState == DirectButtonState.Tapable
+                ? onTap
+                : null,
             borderRadius: borderRadiusDefault,
             child: Container(
               alignment: Alignment.center,
