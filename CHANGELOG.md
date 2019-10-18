@@ -1,3 +1,7 @@
+## [0.0.7+1] - Release
+
+* Add button state tapable
+
 ## [0.0.7] - Release
 
 * Add revision button

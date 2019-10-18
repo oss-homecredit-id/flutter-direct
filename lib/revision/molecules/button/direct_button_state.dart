@@ -1,3 +1,3 @@
 part of flutter_direct;
 
-enum DirectButtonState { Active, Disabled, Loading }
+enum DirectButtonState { Active, Disabled, Tapable }
