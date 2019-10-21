@@ -44,7 +44,7 @@ class TypographyComponent extends StatelessWidget {
             ),
             Container(
               padding: EdgeInsets.symmetric(horizontal: 16),
-              child: DirectFontAppbar(
+              child: DirectTextAppbar(
                 data: "Pesan",
                 size: 22,
                 fontWeight: FontWeight.bold,

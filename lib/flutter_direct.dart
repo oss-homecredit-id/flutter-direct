@@ -19,9 +19,9 @@ part 'commons/molecules/list_view/molecule_list_view.dart';
 ///
 
 part 'revision/atoms/color/direct_color.dart';
-part 'revision/atoms/font/direct_font_family.dart';
-part 'revision/atoms/font/appbar/direct_font_appbar.dart';
-part 'revision/atoms/font/general/direct_font.dart';
+part 'revision/atoms/text/font/direct_font.dart';
+part 'revision/atoms/text/appbar/direct_text_appbar.dart';
+part 'revision/atoms/text/general/direct_text.dart';
 part 'revision/molecules/button/direct_filled_button.dart';
 part 'revision/molecules/button/direct_nude_button.dart';
 part 'revision/molecules/button/direct_button_state.dart';

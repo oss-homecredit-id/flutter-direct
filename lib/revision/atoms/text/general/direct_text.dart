@@ -1,6 +1,6 @@
 part of flutter_direct;
 
-class DirectFont extends StatelessWidget {
+class DirectText extends StatelessWidget {
   final String data;
   final String keyValue;
   final Color color;
@@ -8,7 +8,7 @@ class DirectFont extends StatelessWidget {
   final double size;
   final FontWeight fontWeight;
 
-  DirectFont(
+  DirectText(
       {this.data,
       this.keyValue,
       this.color,
