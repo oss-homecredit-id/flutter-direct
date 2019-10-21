@@ -1,3 +1,7 @@
+## [0.0.7+3] - Release
+
+* add text style component
+
 ## [0.0.7+2] - Release
 
 * fix naming component

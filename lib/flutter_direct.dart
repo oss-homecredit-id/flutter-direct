@@ -25,3 +25,5 @@ part 'revision/atoms/text/general/direct_text.dart';
 part 'revision/molecules/button/direct_filled_button.dart';
 part 'revision/molecules/button/direct_nude_button.dart';
 part 'revision/molecules/button/direct_button_state.dart';
+
+part 'revision/atoms/text/general/direct_text_style.dart';
