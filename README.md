@@ -16,14 +16,15 @@ Please see the example app of this plugin for a full example.
     data: 'Font Family - Pt Sans',
     fontFamily: DirectFont.PtSans,
     color: Colors.white,
-  ),  
+  ), 
+  
 
-  DirectFilledButton(
+ DirectFilledButton(
     text: "Active Button",
     fontSize: 16,
     buttonState: DirectButtonState.Active,
-    fontFamily: DirectFont.PtSans,
+    fontFamily: DirectFontFamily.PtSans,
     fontWeight: FontWeight.normal,
     onTap: () {},
-  ),
+    ),
 ```
