@@ -18,8 +18,10 @@ class ButtonScreen extends StatelessWidget {
               children: <Widget>[
                 DirectText(
                   data: 'Filled Button',
-                  fontFamily: DirectFont.PtSans,
-                  color: Colors.white,
+                  textStyle: TextStyle(
+                    fontFamily: DirectFont.PtSans,
+                    color: Colors.white,
+                  ),
                 ),
                 SizedBox(
                   height: 10,
@@ -60,8 +62,10 @@ class ButtonScreen extends StatelessWidget {
                 ),
                 DirectText(
                   data: 'Nude Button',
-                  fontFamily: DirectFont.PtSans,
-                  color: Colors.white,
+                  textStyle: TextStyle(
+                    fontFamily: DirectFont.PtSans,
+                    color: Colors.white,
+                  ),
                 ),
                 SizedBox(
                   height: 10,
@@ -83,9 +87,51 @@ class ButtonScreen extends StatelessWidget {
                   color: DirectColor.primaryColor,
                   onTap: () {},
                 ),
+                cardSantai()
               ],
             ),
           )),
     );
   }
+
+  Widget cardSantai() => GestureDetector(
+        onTap: () {},
+        child: AtomicCustomCard(
+          marginLeft: 0,
+          marginRight: 0,
+          marginTop: 0,
+          keyValue: 'custom_card',
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          listOfWidget: <Widget>[
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: <Widget>[
+                Container(
+                  margin: EdgeInsets.only(bottom: 5.0),
+                  child: Image.asset(
+                    'assets/images/santai_tippers.png',
+                    scale: 4,
+                  ),
+                ),
+                Container(
+                  child: Icon(Icons.arrow_forward_ios, color: Colors.black),
+                )
+              ],
+            ),
+            Divider(
+              color: Colors.grey,
+            ),
+            Container(
+              margin: EdgeInsets.only(bottom: 5.0),
+              child: DirectText(
+                data:
+                    'Ayo, bagikan kode kamu ke teman, keluarga, dan kenalanmu! Dapatin Rp15.000 tiap kontrak mereka yang di terima',
+                textStyle: DirectTextStyle.productTextStyle,
+              ),
+            ),
+          ],
+        ),
+      );
 }

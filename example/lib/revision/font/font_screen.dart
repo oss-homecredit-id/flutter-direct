@@ -25,16 +25,20 @@ class FontScreen extends StatelessWidget {
                 ),
                 DirectText(
                   data: 'Font Family - Campton',
-                  fontFamily: DirectFont.Campton,
-                  color: Colors.white,
+                  textStyle: TextStyle(
+                    fontFamily: DirectFont.Campton,
+                    color: Colors.white,
+                  ),
                 ),
                 SizedBox(
                   height: 10,
                 ),
                 DirectText(
                   data: 'Font Family - Pt Sans',
-                  fontFamily: DirectFont.PtSans,
-                  color: Colors.white,
+                  textStyle: TextStyle(
+                    fontFamily: DirectFont.PtSans,
+                    color: Colors.white,
+                  ),
                 ),
                 SizedBox(
                   height: 10,
@@ -44,9 +48,15 @@ class FontScreen extends StatelessWidget {
                 ),
                 DirectText(
                   data: 'Font Family - Raleway',
-                  fontFamily: DirectFont.Raleway,
-                  color: Colors.white,
-                )
+                  textStyle: TextStyle(
+                    fontFamily: DirectFont.Raleway,
+                    color: Colors.white,
+                  ),
+                ),
+                DirectText(
+                    data: 'Tippers', textStyle: DirectTextStyle.titleTextStyle),
+                DirectText(
+                    data: 'Tippers', textStyle: DirectTextStyle.titleTextStyle)
               ],
             ),
           )),
