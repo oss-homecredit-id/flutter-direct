@@ -1,6 +1,6 @@
 part of flutter_direct;
 
-class DirectFontAppbar extends StatelessWidget {
+class DirectTextAppbar extends StatelessWidget {
   final String data;
   final String keyValue;
   final double size;
@@ -8,7 +8,7 @@ class DirectFontAppbar extends StatelessWidget {
   final FontWeight fontWeight;
   final FontFamily fontFamily;
 
-  DirectFontAppbar(
+  DirectTextAppbar(
       {this.data,
       this.keyValue,
       this.size,
@@ -28,7 +28,7 @@ class DirectFontAppbar extends StatelessWidget {
       ),
       textScaleFactor: 1.0,
       style: TextStyle(
-        fontFamily: fontFamily ?? DirectFontFamily.Campton,
+        fontFamily: fontFamily ?? DirectFont.Campton,
         fontSize: size ?? 22,
         color: color ?? DirectColor.primaryColor,
         fontWeight: fontWeight ?? FontWeight.bold,

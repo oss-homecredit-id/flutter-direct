@@ -17,23 +17,23 @@ class FontScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                DirectFontAppbar(
+                DirectTextAppbar(
                   data: "APPBAR.FONT",
                 ),
                 SizedBox(
                   height: 10,
                 ),
-                DirectFont(
+                DirectText(
                   data: 'Font Family - Campton',
-                  fontFamily: DirectFontFamily.Campton,
+                  fontFamily: DirectFont.Campton,
                   color: Colors.white,
                 ),
                 SizedBox(
                   height: 10,
                 ),
-                DirectFont(
+                DirectText(
                   data: 'Font Family - Pt Sans',
-                  fontFamily: DirectFontFamily.PtSans,
+                  fontFamily: DirectFont.PtSans,
                   color: Colors.white,
                 ),
                 SizedBox(
@@ -42,9 +42,9 @@ class FontScreen extends StatelessWidget {
                 SizedBox(
                   height: 10,
                 ),
-                DirectFont(
+                DirectText(
                   data: 'Font Family - Raleway',
-                  fontFamily: DirectFontFamily.Raleway,
+                  fontFamily: DirectFont.Raleway,
                   color: Colors.white,
                 )
               ],

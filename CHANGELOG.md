@@ -1,3 +1,7 @@
+## [0.0.7+2] - Release
+
+* fix naming component
+
 ## [0.0.7+1] - Release
 
 * Add button state tapable
