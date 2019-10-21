@@ -16,9 +16,9 @@ class ButtonScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                DirectFont(
+                DirectText(
                   data: 'Filled Button',
-                  fontFamily: DirectFontFamily.PtSans,
+                  fontFamily: DirectFont.PtSans,
                   color: Colors.white,
                 ),
                 SizedBox(
@@ -28,7 +28,7 @@ class ButtonScreen extends StatelessWidget {
                   text: "Active Button",
                   fontSize: 16,
                   buttonState: DirectButtonState.Active,
-                  fontFamily: DirectFontFamily.PtSans,
+                  fontFamily: DirectFont.PtSans,
                   fontWeight: FontWeight.normal,
                   onTap: () {},
                 ),
@@ -39,7 +39,7 @@ class ButtonScreen extends StatelessWidget {
                   text: "Disabled Button",
                   buttonState: DirectButtonState.Disabled,
                   fontSize: 16,
-                  fontFamily: DirectFontFamily.PtSans,
+                  fontFamily: DirectFont.PtSans,
                   fontWeight: FontWeight.normal,
                   onTap: () {},
                 ),
@@ -51,16 +51,16 @@ class ButtonScreen extends StatelessWidget {
                   buttonState: DirectButtonState.Tapable,
                   color: DirectColor.disableColor,
                   fontSize: 16,
-                  fontFamily: DirectFontFamily.PtSans,
+                  fontFamily: DirectFont.PtSans,
                   fontWeight: FontWeight.normal,
                   onTap: () {},
                 ),
                 SizedBox(
                   height: 10,
                 ),
-                DirectFont(
+                DirectText(
                   data: 'Nude Button',
-                  fontFamily: DirectFontFamily.PtSans,
+                  fontFamily: DirectFont.PtSans,
                   color: Colors.white,
                 ),
                 SizedBox(
@@ -69,7 +69,7 @@ class ButtonScreen extends StatelessWidget {
                 DirectNudeButton(
                   text: 'Active Button',
                   buttonState: DirectButtonState.Active,
-                  fontFamily: DirectFontFamily.PtSans,
+                  fontFamily: DirectFont.PtSans,
                   color: DirectColor.primaryColor,
                   onTap: () {},
                 ),
@@ -79,7 +79,7 @@ class ButtonScreen extends StatelessWidget {
                 DirectNudeButton(
                   text: 'Disabled Button',
                   buttonState: DirectButtonState.Disabled,
-                  fontFamily: DirectFontFamily.PtSans,
+                  fontFamily: DirectFont.PtSans,
                   color: DirectColor.primaryColor,
                   onTap: () {},
                 ),

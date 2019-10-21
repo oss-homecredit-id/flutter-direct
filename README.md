@@ -12,21 +12,18 @@ To use this plugin, add flutter_direct as a [dependency in your pubspec.yaml fil
 Please see the example app of this plugin for a full example.
 
 ```dart
- Container(
-    height: 80,
-    width: double.infinity,
-    color: AtomicColor.primaryColor,
-    child: Center(
-    child: Text(
-    "Secondary Color",
-        style: TextStyle(color: Colors.white),
-        )),
-    ),
+  DirectText(
+    data: 'Font Family - Pt Sans',
+    fontFamily: DirectFont.PtSans,
+    color: Colors.white,
+  ),  
 
-AtomicInput(
-    keyValue: 'password',
-    hintText: 'PASSWORD',
-    inputType: InputType.Authentication,
-    formType: FormType.Password,
-),
+  DirectFilledButton(
+    text: "Active Button",
+    fontSize: 16,
+    buttonState: DirectButtonState.Active,
+    fontFamily: DirectFont.PtSans,
+    fontWeight: FontWeight.normal,
+    onTap: () {},
+  ),
 ```
