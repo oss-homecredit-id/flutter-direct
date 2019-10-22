@@ -1,3 +1,7 @@
+## [0.0.7+4] - Release
+
+* add nore text style component
+
 ## [0.0.7+3] - Release
 
 * add text style component
