@@ -16,11 +16,23 @@ class DirectTextStyle {
       color: Colors.black,
       fontWeight: FontWeight.bold);
 
-  static const TextStyle inboxReadTitleStyle = TextStyle(
+  static const TextStyle inboxReadStyle = TextStyle(
       fontFamily: DirectFont.PtSans,
       fontWeight: FontWeight.normal,
       fontSize: 13);
 
-  static const TextStyle inboxUnreadTitleStyle = TextStyle(
+  static const TextStyle inboxUnreadStyle = TextStyle(
       fontFamily: DirectFont.PtSans, fontWeight: FontWeight.bold, fontSize: 13);
+
+  static const TextStyle accountHeaderTextStyle = TextStyle(
+      color: Color.fromARGB(255, 169, 169, 169),
+      fontFamily: DirectFont.Campton,
+      fontWeight: FontWeight.w500,
+      fontSize: 14);
+
+  static const TextStyle accountListTextStyle = TextStyle(
+      color: Color.fromARGB(255, 64, 64, 64),
+      fontFamily: DirectFont.Campton,
+      fontWeight: FontWeight.w500,
+      fontSize: 16);
 }

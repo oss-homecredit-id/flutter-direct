@@ -56,7 +56,13 @@ class FontScreen extends StatelessWidget {
                 DirectText(
                     data: 'Tippers', textStyle: DirectTextStyle.titleTextStyle),
                 DirectText(
-                    data: 'Tippers', textStyle: DirectTextStyle.titleTextStyle)
+                    data: 'Tippers', textStyle: DirectTextStyle.titleTextStyle),
+                DirectText(
+                    data: 'Font - Account Header Text',
+                    textStyle: DirectTextStyle.accountHeaderTextStyle),
+                DirectText(
+                    data: 'Font - Account List Text',
+                    textStyle: DirectTextStyle.accountListTextStyle)
               ],
             ),
           )),
