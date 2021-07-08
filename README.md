@@ -1,6 +1,6 @@
 # flutter_direct
 
-Flutter Direct is a Design System for Home Credit Indonesia Tippers App.
+flutter_direct is a dependencies of Flutter custom widgets for Home Credit Indonesia. 
 
 ## Usage
 
@@ -16,15 +16,21 @@ Please see the example app of this plugin for a full example.
     data: 'Font Family - Pt Sans',
     fontFamily: DirectFont.PtSans,
     color: Colors.white,
+    textOverflow: TextOverflow.ellipsis,
+    maxLines: 1,
+    textStyle: TextStyle(
+      fontWeight: FontWeight.bold,
+    ),
   ), 
   
 
- DirectFilledButton(
+  DirectFilledButton(
+    keyValue: 'button_x',
     text: "Active Button",
     fontSize: 16,
     buttonState: DirectButtonState.Active,
     fontFamily: DirectFontFamily.PtSans,
     fontWeight: FontWeight.normal,
     onTap: () {},
-    ),
+  ),
 ```

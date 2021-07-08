@@ -1,8 +1,8 @@
 name: flutter_direct
-description: Design System for Home Credit Indonesia Tippers App.
-version: 0.0.8
-author: dopefaceee, satriantorobimo & arlakay
-homepage: https://github.com/fe-homecredit-id/flutter-direct
+description: flutter_direct is a dependencies of Flutter custom widgets for Home Credit Indonesia.
+version: 0.1.0
+repository: https://github.com/fe-homecredit-id/flutter-direct
+issue_tracker: https://github.com/oss-homecredit-id/flutter-direct/issues
 
 environment:
   sdk: '>=2.12.0 <3.0.0'
