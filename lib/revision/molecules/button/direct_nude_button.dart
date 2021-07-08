@@ -1,14 +1,14 @@
 part of flutter_direct;
 
 class DirectNudeButton extends StatelessWidget {
-  final String keyValue;
-  final GestureTapCallback onTap;
-  final String text;
-  final DirectButtonState buttonState;
-  final double fontSize;
-  final String fontFamily;
-  final FontWeight fontWeight;
-  final Color color;
+  final String? keyValue;
+  final GestureTapCallback? onTap;
+  final String? text;
+  final DirectButtonState? buttonState;
+  final double? fontSize;
+  final String? fontFamily;
+  final FontWeight? fontWeight;
+  final Color? color;
 
   DirectNudeButton(
       {this.keyValue,
@@ -40,7 +40,7 @@ class DirectNudeButton extends StatelessWidget {
                 children: <Widget>[
                   Flexible(
                     child: Text(
-                      text,
+                      text!,
                       style: TextStyle(
                           fontFamily: fontFamily,
                           color: buttonState == DirectButtonState.Active

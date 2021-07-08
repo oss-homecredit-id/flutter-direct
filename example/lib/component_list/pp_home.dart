@@ -17,8 +17,8 @@ class PPHomeScreen extends StatefulWidget {
 }
 
 class ProductModel {
-  String image;
-  String title;
+  String? image;
+  String? title;
 
   ProductModel({this.image, this.title});
 
@@ -40,25 +40,13 @@ class ProductModel {
 
 class _PPHomeScreenState extends State<PPHomeScreen> {
   static const lightGrey = const Color(0xFFECECEC);
-  final List<String> name = [
-    'John Doe',
-    'Jane Doe',
-    'Mia Goth',
-    'Ramses',
-    'Paul Vik',
-    'Thomas',
-    'Johnny'
-  ];
+  final List<String> name = ['John Doe', 'Jane Doe', 'Mia Goth', 'Ramses', 'Paul Vik', 'Thomas', 'Johnny'];
 
   Widget titleProduk() => Container(
         padding: EdgeInsets.symmetric(horizontal: 35.0),
         margin: EdgeInsets.only(top: 15.0),
         child: Text('Produk HOME CREDIT',
-            style: TextStyle(
-                fontSize: 16.0,
-                fontWeight: FontWeight.bold,
-                color: Colors.black,
-                fontFamily: 'Campton')),
+            style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold, color: Colors.black, fontFamily: 'Campton')),
       );
 
   Widget titlePromosi() => Container(
@@ -68,17 +56,11 @@ class _PPHomeScreenState extends State<PPHomeScreen> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
             Text('Promosi',
-                style: TextStyle(
-                    fontSize: 16.0,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.black,
-                    fontFamily: 'Campton')),
+                style:
+                    TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold, color: Colors.black, fontFamily: 'Campton')),
             Text('Lihat Semua',
-                style: TextStyle(
-                    fontSize: 12.0,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.red,
-                    fontFamily: 'PT Sans')),
+                style:
+                    TextStyle(fontSize: 12.0, fontWeight: FontWeight.bold, color: Colors.red, fontFamily: 'PT Sans')),
           ],
         ),
       );
@@ -90,17 +72,11 @@ class _PPHomeScreenState extends State<PPHomeScreen> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
             Text('Stories',
-                style: TextStyle(
-                    fontSize: 16.0,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.black,
-                    fontFamily: 'Campton')),
+                style:
+                    TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold, color: Colors.black, fontFamily: 'Campton')),
             Text('Lihat Semua',
-                style: TextStyle(
-                    fontSize: 12.0,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.red,
-                    fontFamily: 'PT Sans')),
+                style:
+                    TextStyle(fontSize: 12.0, fontWeight: FontWeight.bold, color: Colors.red, fontFamily: 'PT Sans')),
           ],
         ),
       );
@@ -135,30 +111,20 @@ class _PPHomeScreenState extends State<PPHomeScreen> {
                       padding: const EdgeInsets.only(bottom: 5.0),
                       child: Text('Selamat Siang,',
                           style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 24.0,
-                              color: Colors.white,
-                              fontFamily: 'Campton')),
+                              fontWeight: FontWeight.bold, fontSize: 24.0, color: Colors.white, fontFamily: 'Campton')),
                     ),
                     Padding(
                       padding: const EdgeInsets.only(bottom: 5.0),
                       child: Text('Gordon Gecko,',
                           style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 16.0,
-                              color: Colors.white,
-                              fontFamily: 'Campton')),
+                              fontWeight: FontWeight.bold, fontSize: 16.0, color: Colors.white, fontFamily: 'Campton')),
                     ),
                     Padding(
                       padding: const EdgeInsets.only(bottom: 3.0),
                       child: FittedBox(
                         fit: BoxFit.fitWidth,
                         child: Text('Kode Tippers Kamu FQGH09',
-                            maxLines: 1,
-                            style: TextStyle(
-                                fontSize: 16.0,
-                                color: Colors.white,
-                                fontFamily: 'Campton')),
+                            maxLines: 1, style: TextStyle(fontSize: 16.0, color: Colors.white, fontFamily: 'Campton')),
                       ),
                     ),
                   ],
@@ -196,21 +162,14 @@ class _PPHomeScreenState extends State<PPHomeScreen> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             Padding(
-              padding:
-                  const EdgeInsets.symmetric(horizontal: 15.0, vertical: 15.0),
+              padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 15.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
                   Text('Komisi Bulan Ini',
-                      style: TextStyle(
-                          fontSize: 14.0,
-                          fontWeight: FontWeight.bold,
-                          fontFamily: 'Campton')),
+                      style: TextStyle(fontSize: 14.0, fontWeight: FontWeight.bold, fontFamily: 'Campton')),
                   Text('Rp. 480.000',
-                      style: TextStyle(
-                          fontSize: 14.0,
-                          fontWeight: FontWeight.bold,
-                          fontFamily: 'Campton'))
+                      style: TextStyle(fontSize: 14.0, fontWeight: FontWeight.bold, fontFamily: 'Campton'))
                 ],
               ),
             )
@@ -230,8 +189,7 @@ class _PPHomeScreenState extends State<PPHomeScreen> {
       );
 
   Widget rowProduct(ProductModel productModel) => Container(
-        child: Column(mainAxisAlignment: MainAxisAlignment.center, children: <
-            Widget>[
+        child: Column(mainAxisAlignment: MainAxisAlignment.center, children: <Widget>[
           new Container(
             decoration: new BoxDecoration(
                 color: Colors.white,
@@ -254,9 +212,7 @@ class _PPHomeScreenState extends State<PPHomeScreen> {
           new Padding(
             padding: EdgeInsets.only(top: 6.0),
           ),
-          Flexible(
-              child: new Text(productModel.title,
-                  style: new TextStyle(fontSize: 10.0)))
+          Flexible(child: new Text(productModel.title!, style: new TextStyle(fontSize: 10.0)))
         ]),
       );
 
@@ -268,8 +224,7 @@ class _PPHomeScreenState extends State<PPHomeScreen> {
                 padding: EdgeInsets.symmetric(vertical: 8.0),
                 physics: NeverScrollableScrollPhysics(),
                 itemCount: 8,
-                gridDelegate: new SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 4),
+                gridDelegate: new SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 4),
                 itemBuilder: (context, position) {
                   return rowProduct(ProductModel.dummyData[position]);
                 })),
@@ -278,8 +233,10 @@ class _PPHomeScreenState extends State<PPHomeScreen> {
   Widget carouselBanner() => Container(
         margin: EdgeInsets.only(top: 10),
         child: CarouselSlider(
-          autoPlay: true,
-          height: 100.0,
+          options: CarouselOptions(
+            autoPlay: true,
+            height: 100.0,
+          ),
           items: [1, 2, 3, 4, 5].map((i) {
             return Builder(
               builder: (BuildContext context) {
@@ -323,10 +280,7 @@ class _PPHomeScreenState extends State<PPHomeScreen> {
                       child: Center(
                           child: Text(
                         name[index],
-                        style: TextStyle(
-                            fontSize: 10.0,
-                            color: Colors.black,
-                            fontFamily: 'PT Sans'),
+                        style: TextStyle(fontSize: 10.0, color: Colors.black, fontFamily: 'PT Sans'),
                       )),
                     ),
                   ],
@@ -351,8 +305,7 @@ class _PPHomeScreenState extends State<PPHomeScreen> {
           ),
         ),
         Container(
-            margin: EdgeInsets.only(
-                top: MediaQuery.of(context).size.height * 0.08, bottom: 25),
+            margin: EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.08, bottom: 25),
             child: Column(
               children: <Widget>[
                 Stack(children: <Widget>[

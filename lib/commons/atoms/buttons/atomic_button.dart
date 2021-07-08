@@ -5,25 +5,25 @@ enum ButtonSize { Small, Default, Large }
 enum ButtonType { Primary, Secondary, Disable }
 
 class AtomicButton extends StatelessWidget {
-  final String keyValue;
-  final GestureTapCallback onTap;
+  final String? keyValue;
+  final GestureTapCallback? onTap;
   final String text;
   final Alignment alignment;
   final BorderRadius borderRadiusDefault = BorderRadius.circular(8);
-  final double height;
+  final double? height;
   final ButtonSize buttonSize;
   final ButtonType buttonType;
-  final Color textColor;
+  final Color? textColor;
 
   AtomicButton(
       {this.keyValue,
       this.onTap,
-      @required this.text,
+      required this.text,
       this.height,
-      @required this.buttonType,
+      required this.buttonType,
       this.alignment = Alignment.center,
       this.textColor,
-      @required this.buttonSize});
+      required this.buttonSize});
 
   @override
   Widget build(BuildContext context) {

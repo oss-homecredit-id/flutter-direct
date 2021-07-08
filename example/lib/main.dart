@@ -1,3 +1,13 @@
+import 'package:example/component_list/color_component.dart';
+import 'package:example/component_list/grid_component.dart';
+import 'package:example/component_list/image_component.dart';
+import 'package:example/component_list/input_component.dart';
+import 'package:example/component_list/listtile_component.dart';
+import 'package:example/component_list/pp_home.dart';
+import 'package:example/component_list/pp_homev5.dart';
+import 'package:example/component_list/pp_homev6.dart';
+import 'package:example/component_list/pp_inbox.dart';
+import 'package:example/component_list/typography_component.dart';
 import 'package:example/revision/font/button_screen.dart';
 import 'package:example/revision/font/color_screen.dart';
 import 'package:example/revision/font/font_screen.dart';
@@ -15,16 +25,16 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/button': (context) => ButtonScreen(),
-        // '/typography': (context) => TypographyComponent(),
-        // '/color': (context) => ColorComponent(),
-        // '/input': (context) => InputComponent(),
-        // '/listtile': (context) => ListitleComponent(),
-        // '/homepp': (context) => PPHomeScreen(),
+        '/typography': (context) => TypographyComponent(),
+        '/color': (context) => ColorComponent(),
+        '/input': (context) => InputComponent(),
+        '/listtile': (context) => ListitleComponent(),
+        '/homepp': (context) => PPHomeScreen(),
         // '/homeppv5': (context) => PPHomeScreenV5(),
         // '/homeppv6': (context) => PPHomeScreenV6(),
-        // '/inboxpp': (context) => PPInboxScreen(),
-        // '/image': (context) => ImageComponent(),
-        // '/grid': (context) => GridComponent()
+        '/inboxpp': (context) => PPInboxScreen(),
+        '/image': (context) => ImageComponent(),
+        '/grid': (context) => GridComponent(),
         '/color': (context) => ColorScreen(),
         '/font': (context) => FontScreen(),
       },
@@ -82,27 +92,27 @@ class _HomeScreenState extends State<HomeScreen> {
                         Navigator.pushNamed(context, '/button');
                       },
                     ),
-                    // ListTile(
-                    //   trailing: Icon(Icons.arrow_forward_ios),
-                    //   title: Text("Input Component"),
-                    //   onTap: () {
-                    //     Navigator.pushNamed(context, '/input');
-                    //   },
-                    // ),
-                    // ListTile(
-                    //   trailing: Icon(Icons.arrow_forward_ios),
-                    //   title: Text("List Tile Component"),
-                    //   onTap: () {
-                    //     Navigator.pushNamed(context, '/listtile');
-                    //   },
-                    // ),
-                    // ListTile(
-                    //   trailing: Icon(Icons.arrow_forward_ios),
-                    //   title: Text("Home Partner Portal"),
-                    //   onTap: () {
-                    //     Navigator.pushNamed(context, '/homepp');
-                    //   },
-                    // ),
+                    ListTile(
+                      trailing: Icon(Icons.arrow_forward_ios),
+                      title: Text("Input Component"),
+                      onTap: () {
+                        Navigator.pushNamed(context, '/input');
+                      },
+                    ),
+                    ListTile(
+                      trailing: Icon(Icons.arrow_forward_ios),
+                      title: Text("List Tile Component"),
+                      onTap: () {
+                        Navigator.pushNamed(context, '/listtile');
+                      },
+                    ),
+                    ListTile(
+                      trailing: Icon(Icons.arrow_forward_ios),
+                      title: Text("Home Partner Portal"),
+                      onTap: () {
+                        Navigator.pushNamed(context, '/homepp');
+                      },
+                    ),
                     // ListTile(
                     //   trailing: Icon(Icons.arrow_forward_ios),
                     //   title: Text("Home Partner Portal V5"),
@@ -117,27 +127,27 @@ class _HomeScreenState extends State<HomeScreen> {
                     //     Navigator.pushNamed(context, '/homeppv6');
                     //   },
                     // ),
-                    // ListTile(
-                    //   trailing: Icon(Icons.arrow_forward_ios),
-                    //   title: Text("Inbox Partner Portal"),
-                    //   onTap: () {
-                    //     Navigator.pushNamed(context, '/inboxpp');
-                    //   },
-                    // ),
-                    // ListTile(
-                    //   trailing: Icon(Icons.arrow_forward_ios),
-                    //   title: Text("Image Component"),
-                    //   onTap: () {
-                    //     Navigator.pushNamed(context, '/image');
-                    //   },
-                    // ),
-                    // ListTile(
-                    //   trailing: Icon(Icons.arrow_forward_ios),
-                    //   title: Text("Grid Component"),
-                    //   onTap: () {
-                    //     Navigator.pushNamed(context, '/grid');
-                    //   },
-                    // )
+                    ListTile(
+                      trailing: Icon(Icons.arrow_forward_ios),
+                      title: Text("Inbox Partner Portal"),
+                      onTap: () {
+                        Navigator.pushNamed(context, '/inboxpp');
+                      },
+                    ),
+                    ListTile(
+                      trailing: Icon(Icons.arrow_forward_ios),
+                      title: Text("Image Component"),
+                      onTap: () {
+                        Navigator.pushNamed(context, '/image');
+                      },
+                    ),
+                    ListTile(
+                      trailing: Icon(Icons.arrow_forward_ios),
+                      title: Text("Grid Component"),
+                      onTap: () {
+                        Navigator.pushNamed(context, '/grid');
+                      },
+                    )
                   ],
                 ),
               ),

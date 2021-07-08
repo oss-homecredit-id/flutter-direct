@@ -106,13 +106,18 @@ class ButtonScreen extends StatelessWidget {
           listOfWidget: <Widget>[
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
-                Container(
-                  margin: EdgeInsets.only(bottom: 5.0),
-                  child: Image.asset(
-                    'assets/images/santai_tippers.png',
-                    scale: 4,
+                Expanded(
+                  child: Container(
+                    margin: EdgeInsets.only(bottom: 5.0),
+                    width: double.infinity,
+                    height: 100,
+                    color: Colors.grey,
+                    child: Center(
+                      child: Text(
+                        'Image',
+                      ),
+                    ),
                   ),
                 ),
                 Container(

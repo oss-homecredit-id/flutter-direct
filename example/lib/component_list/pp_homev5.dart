@@ -20,8 +20,8 @@ class PPHomeScreenV5 extends StatefulWidget {
 }
 
 class ProductModel {
-  String image;
-  String title;
+  String? image;
+  String? title;
 
   ProductModel({this.image, this.title});
 
@@ -43,15 +43,7 @@ class ProductModel {
 
 class _PPHomeScreenV5State extends State<PPHomeScreenV5> {
   static const lightGrey = const Color(0xFFECECEC);
-  final List<String> name = [
-    'John Doe',
-    'Jane Doe',
-    'Mia Goth',
-    'Ramses',
-    'Paul Vik',
-    'Thomas',
-    'Johnny'
-  ];
+  final List<String> name = ['John Doe', 'Jane Doe', 'Mia Goth', 'Ramses', 'Paul Vik', 'Thomas', 'Johnny'];
 
   final List items = [1, 2, 3, 4, 5];
 
@@ -59,11 +51,7 @@ class _PPHomeScreenV5State extends State<PPHomeScreenV5> {
         padding: EdgeInsets.symmetric(horizontal: 35.0),
         margin: EdgeInsets.only(top: 15.0),
         child: Text('Produk HOME CREDIT',
-            style: TextStyle(
-                fontSize: 16.0,
-                fontWeight: FontWeight.bold,
-                color: Colors.black,
-                fontFamily: 'Campton')),
+            style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold, color: Colors.black, fontFamily: 'Campton')),
       );
 
   Widget titlePromosi() => Container(
@@ -73,17 +61,11 @@ class _PPHomeScreenV5State extends State<PPHomeScreenV5> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
             Text('Promosi',
-                style: TextStyle(
-                    fontSize: 16.0,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.black,
-                    fontFamily: 'Campton')),
+                style:
+                    TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold, color: Colors.black, fontFamily: 'Campton')),
             Text('Lihat Semua',
-                style: TextStyle(
-                    fontSize: 12.0,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.red,
-                    fontFamily: 'PT Sans')),
+                style:
+                    TextStyle(fontSize: 12.0, fontWeight: FontWeight.bold, color: Colors.red, fontFamily: 'PT Sans')),
           ],
         ),
       );
@@ -95,17 +77,11 @@ class _PPHomeScreenV5State extends State<PPHomeScreenV5> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
             Text('Stories',
-                style: TextStyle(
-                    fontSize: 16.0,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.black,
-                    fontFamily: 'Campton')),
+                style:
+                    TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold, color: Colors.black, fontFamily: 'Campton')),
             Text('Lihat Semua',
-                style: TextStyle(
-                    fontSize: 12.0,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.red,
-                    fontFamily: 'PT Sans')),
+                style:
+                    TextStyle(fontSize: 12.0, fontWeight: FontWeight.bold, color: Colors.red, fontFamily: 'PT Sans')),
           ],
         ),
       );
@@ -114,11 +90,7 @@ class _PPHomeScreenV5State extends State<PPHomeScreenV5> {
         padding: EdgeInsets.symmetric(horizontal: 18.0),
         margin: EdgeInsets.only(top: 15.0),
         child: Text('Laporan Performa',
-            style: TextStyle(
-                fontSize: 16.0,
-                fontWeight: FontWeight.bold,
-                color: Colors.black,
-                fontFamily: 'Campton')),
+            style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold, color: Colors.black, fontFamily: 'Campton')),
       );
 
   Widget content() => Column(
@@ -154,9 +126,7 @@ class _PPHomeScreenV5State extends State<PPHomeScreenV5> {
                         color: Colors.white,
                       ),
                       Container(
-                        child: Center(
-                            child: Icon(Icons.notifications,
-                                size: 30, color: Colors.white)),
+                        child: Center(child: Icon(Icons.notifications, size: 30, color: Colors.white)),
                       ),
                     ],
                   )),
@@ -170,10 +140,7 @@ class _PPHomeScreenV5State extends State<PPHomeScreenV5> {
                       padding: const EdgeInsets.only(bottom: 5.0),
                       child: Text('Halo, Gordon Gecko',
                           style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 24.0,
-                              color: Colors.white,
-                              fontFamily: 'Campton')),
+                              fontWeight: FontWeight.bold, fontSize: 24.0, color: Colors.white, fontFamily: 'Campton')),
                     ),
                   ),
                   Container(
@@ -204,8 +171,7 @@ class _PPHomeScreenV5State extends State<PPHomeScreenV5> {
       );
 
   Widget rowProduct(ProductModel productModel) => Container(
-        child: Column(mainAxisAlignment: MainAxisAlignment.center, children: <
-            Widget>[
+        child: Column(mainAxisAlignment: MainAxisAlignment.center, children: <Widget>[
           new Container(
             decoration: new BoxDecoration(
                 color: Colors.white,
@@ -228,9 +194,7 @@ class _PPHomeScreenV5State extends State<PPHomeScreenV5> {
           new Padding(
             padding: EdgeInsets.only(top: 6.0),
           ),
-          Flexible(
-              child: new Text(productModel.title,
-                  style: new TextStyle(fontSize: 10.0)))
+          Flexible(child: new Text(productModel.title!, style: new TextStyle(fontSize: 10.0)))
         ]),
       );
 
@@ -242,8 +206,7 @@ class _PPHomeScreenV5State extends State<PPHomeScreenV5> {
                 padding: EdgeInsets.symmetric(vertical: 8.0),
                 physics: NeverScrollableScrollPhysics(),
                 itemCount: 8,
-                gridDelegate: new SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 4),
+                gridDelegate: new SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 4),
                 itemBuilder: (context, position) {
                   return rowProduct(ProductModel.dummyData[position]);
                 })),
@@ -252,8 +215,10 @@ class _PPHomeScreenV5State extends State<PPHomeScreenV5> {
   Widget carouselBanner() => Container(
         margin: EdgeInsets.only(top: 25),
         child: CarouselSlider(
-          autoPlay: true,
-          height: 100.0,
+          options: CarouselOptions(
+            autoPlay: true,
+            height: 100.0,
+          ),
           items: items.map((i) {
             return Builder(
               builder: (BuildContext context) {
@@ -276,7 +241,7 @@ class _PPHomeScreenV5State extends State<PPHomeScreenV5> {
         child: NotificationListener<OverscrollIndicatorNotification>(
           onNotification: (overscroll) {
             overscroll.disallowGlow();
-          },
+          } as bool Function(OverscrollIndicatorNotification)?,
           child: ListView.builder(
               scrollDirection: Axis.horizontal,
               itemCount: name.length,
@@ -289,8 +254,7 @@ class _PPHomeScreenV5State extends State<PPHomeScreenV5> {
                       Container(
                         height: MediaQuery.of(context).size.height * 0.19,
                         decoration: BoxDecoration(
-                          border:
-                              Border.all(color: Colors.transparent, width: 1),
+                          border: Border.all(color: Colors.transparent, width: 1),
                           borderRadius: BorderRadius.all(Radius.circular(6)),
                           color: Colors.red,
                         ),
@@ -309,7 +273,7 @@ class _PPHomeScreenV5State extends State<PPHomeScreenV5> {
         child: NotificationListener<OverscrollIndicatorNotification>(
           onNotification: (overscroll) {
             overscroll.disallowGlow();
-          },
+          } as bool Function(OverscrollIndicatorNotification)?,
           child: ListView.builder(
               scrollDirection: Axis.horizontal,
               itemCount: name.length,
@@ -322,8 +286,7 @@ class _PPHomeScreenV5State extends State<PPHomeScreenV5> {
                       Container(
                         height: MediaQuery.of(context).size.height * 0.19,
                         decoration: BoxDecoration(
-                          border:
-                              Border.all(color: Colors.transparent, width: 1),
+                          border: Border.all(color: Colors.transparent, width: 1),
                           borderRadius: BorderRadius.all(Radius.circular(6)),
                           color: Colors.blue,
                         ),
@@ -335,10 +298,7 @@ class _PPHomeScreenV5State extends State<PPHomeScreenV5> {
                         child: Center(
                             child: Text(
                           name[index],
-                          style: TextStyle(
-                              fontSize: 10.0,
-                              color: Colors.black,
-                              fontFamily: 'PT Sans'),
+                          style: TextStyle(fontSize: 10.0, color: Colors.black, fontFamily: 'PT Sans'),
                         )),
                       ),
                     ],
@@ -351,7 +311,7 @@ class _PPHomeScreenV5State extends State<PPHomeScreenV5> {
   Widget bodyBuilder() => NotificationListener<OverscrollIndicatorNotification>(
         onNotification: (overscroll) {
           overscroll.disallowGlow();
-        },
+        } as bool Function(OverscrollIndicatorNotification)?,
         child: SingleChildScrollView(
             child: Stack(children: <Widget>[
           SizedBox(
@@ -360,15 +320,12 @@ class _PPHomeScreenV5State extends State<PPHomeScreenV5> {
             child: Container(
               decoration: BoxDecoration(
                 gradient: new LinearGradient(
-                    begin: Alignment.topRight,
-                    end: Alignment.bottomLeft,
-                    colors: PPHomeScreenV5.kitGradientsHeader),
+                    begin: Alignment.topRight, end: Alignment.bottomLeft, colors: PPHomeScreenV5.kitGradientsHeader),
               ),
             ),
           ),
           Container(
-              margin: EdgeInsets.only(
-                  top: MediaQuery.of(context).size.height * 0.08, bottom: 25),
+              margin: EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.08, bottom: 25),
               child: Column(
                 children: <Widget>[
                   Stack(children: <Widget>[
@@ -407,20 +364,14 @@ class _PPHomeScreenV5State extends State<PPHomeScreenV5> {
           Container(
             margin: EdgeInsets.only(bottom: 5.0),
             child: Text('Bagi kode kamu',
-                style: TextStyle(
-                    fontSize: 13.0,
-                    fontWeight: FontWeight.bold,
-                    fontFamily: 'Campton',
-                    color: Colors.white)),
+                style:
+                    TextStyle(fontSize: 13.0, fontWeight: FontWeight.bold, fontFamily: 'Campton', color: Colors.white)),
           ),
           Container(
             margin: EdgeInsets.only(bottom: 5.0),
             child: Text('Dapatin Rp30.000 per aplikasi',
-                style: TextStyle(
-                    fontSize: 13.0,
-                    fontWeight: FontWeight.bold,
-                    fontFamily: 'Campton',
-                    color: Colors.white)),
+                style:
+                    TextStyle(fontSize: 13.0, fontWeight: FontWeight.bold, fontFamily: 'Campton', color: Colors.white)),
           ),
           Container(
             margin: EdgeInsets.only(bottom: 5.0),
@@ -436,10 +387,7 @@ class _PPHomeScreenV5State extends State<PPHomeScreenV5> {
                   ),
                   child: Center(
                     child: Text('FQGH096',
-                        style: TextStyle(
-                            fontSize: 16.0,
-                            fontWeight: FontWeight.bold,
-                            fontFamily: 'Campton')),
+                        style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold, fontFamily: 'Campton')),
                   ),
                 ),
               ],
@@ -474,16 +422,10 @@ class _PPHomeScreenV5State extends State<PPHomeScreenV5> {
               children: <Widget>[
                 Text('Partner Terdekat',
                     style: TextStyle(
-                        fontSize: 16.0,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.black,
-                        fontFamily: 'Campton')),
+                        fontSize: 16.0, fontWeight: FontWeight.bold, color: Colors.black, fontFamily: 'Campton')),
                 Text('Buka Map',
                     style: TextStyle(
-                        fontSize: 12.0,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.blue,
-                        fontFamily: 'PT Sans')),
+                        fontSize: 12.0, fontWeight: FontWeight.bold, color: Colors.blue, fontFamily: 'PT Sans')),
               ],
             ),
           ),
@@ -491,10 +433,7 @@ class _PPHomeScreenV5State extends State<PPHomeScreenV5> {
               margin: EdgeInsets.only(top: 10),
               padding: const EdgeInsets.symmetric(horizontal: 15.0),
               child: Text('Partner-partner dalam radius 5km',
-                  style: TextStyle(
-                      fontSize: 12.0,
-                      color: Colors.black,
-                      fontFamily: 'PT Sans'))),
+                  style: TextStyle(fontSize: 12.0, color: Colors.black, fontFamily: 'PT Sans'))),
           Container(
               margin: EdgeInsets.only(top: 10),
               padding: const EdgeInsets.symmetric(horizontal: 15.0),
@@ -506,28 +445,25 @@ class _PPHomeScreenV5State extends State<PPHomeScreenV5> {
             child: NotificationListener<OverscrollIndicatorNotification>(
               onNotification: (overscroll) {
                 overscroll.disallowGlow();
-              },
+              } as bool Function(OverscrollIndicatorNotification)?,
               child: ListView.builder(
                   itemCount: ProductModel.dummyData.length,
                   scrollDirection: Axis.horizontal,
                   itemBuilder: (context, index) {
                     return Container(
                       padding: EdgeInsets.symmetric(horizontal: 10.0),
-                      margin: EdgeInsets.only(
-                          top: 15, left: 10, right: 10, bottom: 10),
+                      margin: EdgeInsets.only(top: 15, left: 10, right: 10, bottom: 10),
                       child: Column(
                         children: <Widget>[
                           Image.asset(
-                            ProductModel.dummyData[index].image,
+                            ProductModel.dummyData[index].image!,
                             height: 30,
                             fit: BoxFit.fitHeight,
                           ),
                           SizedBox(
                             height: 5,
                           ),
-                          Text('0.1 km',
-                              style: TextStyle(
-                                  fontSize: 10.0, fontFamily: 'PT Sans'))
+                          Text('0.1 km', style: TextStyle(fontSize: 10.0, fontFamily: 'PT Sans'))
                         ],
                       ),
                     );
@@ -551,10 +487,7 @@ class _PPHomeScreenV5State extends State<PPHomeScreenV5> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
                 Text('Komisi Bulan Ini',
-                    style: TextStyle(
-                        fontSize: 14.0,
-                        fontWeight: FontWeight.bold,
-                        fontFamily: 'Campton'))
+                    style: TextStyle(fontSize: 14.0, fontWeight: FontWeight.bold, fontFamily: 'Campton'))
               ],
             ),
           ),
@@ -562,13 +495,8 @@ class _PPHomeScreenV5State extends State<PPHomeScreenV5> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.end,
             children: <Widget>[
-              Text('per 21 Agustus 2019',
-                  style: TextStyle(fontSize: 10.0, fontFamily: 'Campton')),
-              Text('Rp. 480.000',
-                  style: TextStyle(
-                      fontSize: 16.0,
-                      fontWeight: FontWeight.bold,
-                      fontFamily: 'Campton'))
+              Text('per 21 Agustus 2019', style: TextStyle(fontSize: 10.0, fontFamily: 'Campton')),
+              Text('Rp. 480.000', style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold, fontFamily: 'Campton'))
             ],
           )
         ],
@@ -603,13 +531,8 @@ class _PPHomeScreenV5State extends State<PPHomeScreenV5> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
                           Text('Performa Kamu',
-                              style: TextStyle(
-                                  fontSize: 14.0,
-                                  fontWeight: FontWeight.bold,
-                                  fontFamily: 'Campton')),
-                          Text('per 21 Agustus 2019',
-                              style: TextStyle(
-                                  fontSize: 10.0, fontFamily: 'Campton')),
+                              style: TextStyle(fontSize: 14.0, fontWeight: FontWeight.bold, fontFamily: 'Campton')),
+                          Text('per 21 Agustus 2019', style: TextStyle(fontSize: 10.0, fontFamily: 'Campton')),
                         ],
                       ),
                     )
@@ -626,14 +549,9 @@ class _PPHomeScreenV5State extends State<PPHomeScreenV5> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
-                          Text('Komisi Bulan Ini',
-                              style: TextStyle(
-                                  fontSize: 14.0, fontFamily: 'Campton')),
+                          Text('Komisi Bulan Ini', style: TextStyle(fontSize: 14.0, fontFamily: 'Campton')),
                           Text('Rp480.000',
-                              style: TextStyle(
-                                  fontSize: 10.0,
-                                  fontWeight: FontWeight.bold,
-                                  fontFamily: 'Campton')),
+                              style: TextStyle(fontSize: 10.0, fontWeight: FontWeight.bold, fontFamily: 'Campton')),
                         ],
                       ),
                     ),
@@ -641,14 +559,9 @@ class _PPHomeScreenV5State extends State<PPHomeScreenV5> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
-                          Text('Refferal',
-                              style: TextStyle(
-                                  fontSize: 14.0, fontFamily: 'Campton')),
+                          Text('Refferal', style: TextStyle(fontSize: 14.0, fontFamily: 'Campton')),
                           Text('32 Pelanggan',
-                              style: TextStyle(
-                                  fontSize: 10.0,
-                                  fontWeight: FontWeight.bold,
-                                  fontFamily: 'Campton')),
+                              style: TextStyle(fontSize: 10.0, fontWeight: FontWeight.bold, fontFamily: 'Campton')),
                         ],
                       ),
                     )

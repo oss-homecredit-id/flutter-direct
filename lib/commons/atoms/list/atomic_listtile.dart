@@ -3,11 +3,11 @@ part of flutter_direct;
 enum ListTileType { Inbox, NotInbox }
 
 class AtomicListtile extends StatelessWidget {
-  final String subTitle;
-  final String leading;
-  final String titleInbox;
-  final String titleInboxDate;
-  final ListTileType listTileType;
+  final String? subTitle;
+  final String? leading;
+  final String? titleInbox;
+  final String? titleInboxDate;
+  final ListTileType? listTileType;
 
   AtomicListtile(
       {this.subTitle,
@@ -28,26 +28,26 @@ class AtomicListtile extends StatelessWidget {
             borderRadius: BorderRadius.all(Radius.circular(6)),
           ),
           child: Center(
-            child: Text(leading, style: TextStyle(fontFamily: 'PtSans')),
+            child: Text(leading!, style: TextStyle(fontFamily: 'PtSans')),
           ),
         ),
         title: listTileType == ListTileType.Inbox
             ? Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
-                  Text(titleInbox,
+                  Text(titleInbox!,
                       style: TextStyle(
                           fontFamily: 'PtSans',
                           fontWeight: FontWeight.bold,
                           fontSize: 13)),
-                  Text(titleInboxDate,
+                  Text(titleInboxDate!,
                       style: TextStyle(
                           fontFamily: 'PtSans',
                           fontWeight: FontWeight.bold,
                           fontSize: 12)),
                 ],
               )
-            : Text(titleInbox,
+            : Text(titleInbox!,
                 style: TextStyle(
                     fontFamily: 'PtSans',
                     fontWeight: FontWeight.bold,
@@ -58,7 +58,7 @@ class AtomicListtile extends StatelessWidget {
             SizedBox(
               height: 10.0,
             ),
-            Text(subTitle,
+            Text(subTitle!,
                 style: TextStyle(
                     fontFamily: 'PtSans',
                     fontWeight: FontWeight.bold,
