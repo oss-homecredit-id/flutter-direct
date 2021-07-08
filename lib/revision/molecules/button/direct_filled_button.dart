@@ -1,20 +1,20 @@
 part of flutter_direct;
 
 class DirectFilledButton extends StatelessWidget {
-  final String keyValue;
-  final GestureTapCallback onTap;
+  final String? keyValue;
+  final GestureTapCallback? onTap;
   final String text;
   final BorderRadius borderRadiusDefault = BorderRadius.circular(8);
-  final double fontSize;
-  final String fontFamily;
-  final FontWeight fontWeight;
-  final DirectButtonState buttonState;
-  final Color color;
+  final double? fontSize;
+  final String? fontFamily;
+  final FontWeight? fontWeight;
+  final DirectButtonState? buttonState;
+  final Color? color;
 
   DirectFilledButton(
       {this.keyValue,
       this.onTap,
-      @required this.text,
+      required this.text,
       this.fontSize,
       this.fontFamily,
       this.fontWeight,

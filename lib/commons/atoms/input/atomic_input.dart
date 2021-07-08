@@ -4,19 +4,19 @@ enum InputType { Authentication, Search }
 enum FormType { Username, Password }
 
 class AtomicInput extends StatelessWidget {
-  final String hintText;
-  final GestureTapCallback onTap;
-  final String keyValue;
-  final InputType inputType;
-  final FormType formType;
+  final String? hintText;
+  final GestureTapCallback? onTap;
+  final String? keyValue;
+  final InputType? inputType;
+  final FormType? formType;
 
-  final Function funcValidatorUsername;
-  final Function funcValidatorPassword;
+  final Function? funcValidatorUsername;
+  final Function? funcValidatorPassword;
 
-  final TextEditingController usernameController;
-  final TextEditingController passwordController;
-  final TextEditingController searchController;
-  final TextEditingController inputController;
+  final TextEditingController? usernameController;
+  final TextEditingController? passwordController;
+  final TextEditingController? searchController;
+  final TextEditingController? inputController;
 
   AtomicInput(
       {this.hintText,
@@ -37,7 +37,7 @@ class AtomicInput extends StatelessWidget {
       key: Key(keyValue ?? ''),
       child: inputType == InputType.Search
           ? TextField(
-              key: Key(keyValue),
+              key: Key(keyValue!),
               controller: searchController,
               decoration: InputDecoration(
                 prefixIcon: Icon(Icons.search, color: Colors.grey),
@@ -60,11 +60,11 @@ class AtomicInput extends StatelessWidget {
             )
           : inputType == InputType.Authentication
               ? TextField(
-                  key: Key(keyValue),
+                  key: Key(keyValue!),
                   onChanged: inputType == InputType.Authentication &&
                           formType == FormType.Username
-                      ? funcValidatorUsername
-                      : funcValidatorPassword,
+                      ? funcValidatorUsername as void Function(String)?
+                      : funcValidatorPassword as void Function(String)?,
                   maxLines: 1,
                   keyboardType: TextInputType.emailAddress,
                   controller: inputType == InputType.Authentication &&

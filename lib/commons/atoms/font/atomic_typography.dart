@@ -5,16 +5,16 @@ enum FontFamily { Campton, Raleway }
 enum FontBold { Bold, Regular, Medium }
 
 class AtomicTypography extends StatelessWidget {
-  final String keyValue;
-  final FontType fontType;
-  final FontFamily fontFamily;
-  final Color color;
-  final String data;
-  final FontWeight fontWeight;
-  final TextAlign textAlign;
-  final bool ellipsisText;
-  final double lineHeight;
-  final int maxLines;
+  final String? keyValue;
+  final FontType? fontType;
+  final FontFamily? fontFamily;
+  final Color? color;
+  final String? data;
+  final FontWeight? fontWeight;
+  final TextAlign? textAlign;
+  final bool? ellipsisText;
+  final double? lineHeight;
+  final int? maxLines;
 
   AtomicTypography(
       {this.keyValue,
@@ -62,7 +62,7 @@ class AtomicTypography extends StatelessWidget {
     );
   }
 
-  getFontFamilyType(FontFamily fontFamily) {
+  getFontFamilyType(FontFamily? fontFamily) {
     switch (fontFamily) {
       case FontFamily.Campton:
         return DirectFont.Campton;

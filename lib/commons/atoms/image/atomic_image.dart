@@ -3,12 +3,12 @@ part of flutter_direct;
 enum ImageType { Avatar, Cover, LargeBanner, Banner, LargeThumbnail, Thumbnail }
 
 class AtomicImage extends StatelessWidget {
-  final GestureTapCallback onPressed;
-  final ImageType imageType;
-  final String imageSrc;
-  final BorderRadius customBorderRadius;
-  final double height;
-  final bool useBorderRadius;
+  final GestureTapCallback? onPressed;
+  final ImageType? imageType;
+  final String? imageSrc;
+  final BorderRadius? customBorderRadius;
+  final double? height;
+  final bool? useBorderRadius;
 
   AtomicImage({
     this.onPressed,
@@ -60,7 +60,7 @@ class AtomicImage extends StatelessWidget {
                   image: imageSrc == null
                       ? AssetImage('assets/female.png',
                           package: 'flutter_direct')
-                      : ExactAssetImage(imageSrc,
+                      : ExactAssetImage(imageSrc!,
                           ),
                   fit: BoxFit.cover,
                 ),

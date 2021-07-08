@@ -3,17 +3,17 @@ part of flutter_direct;
 enum CustomCardBgv2 { Color, Image }
 
 class AtomicCustomCardV2 extends StatelessWidget {
-  final double marginLeft;
-  final double marginRight;
-  final double marginTop;
-  final double marginBottom;
-  final Color cardColor;
-  final String keyValue;
-  final MainAxisAlignment mainAxisAlignment;
-  final CrossAxisAlignment crossAxisAlignment;
-  final CustomCardBgv2 customCardBg;
-  final String image;
-  final List<Widget> listOfWidget;
+  final double? marginLeft;
+  final double? marginRight;
+  final double? marginTop;
+  final double? marginBottom;
+  final Color? cardColor;
+  final String? keyValue;
+  final MainAxisAlignment? mainAxisAlignment;
+  final CrossAxisAlignment? crossAxisAlignment;
+  final CustomCardBgv2? customCardBg;
+  final String? image;
+  final List<Widget>? listOfWidget;
 
   AtomicCustomCardV2(
       {this.marginLeft,
@@ -33,7 +33,7 @@ class AtomicCustomCardV2 extends StatelessWidget {
     return Container(
       key: Key(keyValue ?? ''),
       margin:
-          EdgeInsets.only(left: marginLeft, right: marginRight, top: marginTop),
+          EdgeInsets.only(left: marginLeft!, right: marginRight!, top: marginTop!),
       decoration: BoxDecoration(
           color: customCardBg == CustomCardBg.Color ? cardColor : Colors.white,
           border: Border.all(color: Colors.transparent, width: 1.0),
@@ -50,9 +50,9 @@ class AtomicCustomCardV2 extends StatelessWidget {
         child: Stack(
           children: <Widget>[
             Column(
-                mainAxisAlignment: mainAxisAlignment,
-                crossAxisAlignment: crossAxisAlignment,
-                children: listOfWidget)
+                mainAxisAlignment: mainAxisAlignment!,
+                crossAxisAlignment: crossAxisAlignment!,
+                children: listOfWidget!)
           ],
         ),
       ),

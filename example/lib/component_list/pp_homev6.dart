@@ -71,7 +71,7 @@ class _PPHomeScreenV6State extends State<PPHomeScreenV6> {
         child: NotificationListener<OverscrollIndicatorNotification>(
           onNotification: (overscroll) {
             overscroll.disallowGlow();
-          },
+          } as bool Function(OverscrollIndicatorNotification)?,
           child: SingleChildScrollView(
             padding: EdgeInsets.all(20),
             child: Column(

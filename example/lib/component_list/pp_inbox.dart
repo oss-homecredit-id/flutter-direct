@@ -8,10 +8,10 @@ class PPInboxScreen extends StatefulWidget {
 }
 
 class ChatModel {
-  final String avatarUrl;
-  final String name;
-  final String datetime;
-  final String message;
+  final String? avatarUrl;
+  final String? name;
+  final String? datetime;
+  final String? message;
 
   ChatModel({this.avatarUrl, this.name, this.datetime, this.message});
 
@@ -203,7 +203,7 @@ class ChatModel {
 
 class _PPInboxScreenState extends State<PPInboxScreen>
     with SingleTickerProviderStateMixin {
-  TabController _controller;
+  TabController? _controller;
 
   Widget buildContent() => Container(
           decoration: BoxDecoration(color: Colors.white),
@@ -234,12 +234,12 @@ class _PPInboxScreenState extends State<PPInboxScreen>
                     title: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: <Widget>[
-                        Text(_model.name,
+                        Text(_model.name!,
                             style: TextStyle(
                                 fontFamily: 'PtSans',
                                 fontWeight: FontWeight.bold,
                                 fontSize: 13)),
-                        Text(_model.datetime,
+                        Text(_model.datetime!,
                             style: TextStyle(
                                 fontFamily: 'PtSans',
                                 fontWeight: FontWeight.bold,
@@ -252,7 +252,7 @@ class _PPInboxScreenState extends State<PPInboxScreen>
                         SizedBox(
                           height: 10.0,
                         ),
-                        Text(_model.message,
+                        Text(_model.message!,
                             style: TextStyle(
                                 fontFamily: 'PtSans',
                                 fontWeight: FontWeight.bold,
@@ -292,7 +292,7 @@ class _PPInboxScreenState extends State<PPInboxScreen>
 
   @override
   void dispose() {
-    _controller.dispose();
+    _controller!.dispose();
     super.dispose();
   }
 

@@ -1,11 +1,11 @@
 part of flutter_direct;
 
 class MoleculeGridView extends StatelessWidget {
-  final int crossItemCount;
-  final int generateItem;
-  final Widget item;
-  final EdgeInsetsGeometry padding;
-  final GestureTapCallback onTap;
+  final int? crossItemCount;
+  final int? generateItem;
+  final Widget? item;
+  final EdgeInsetsGeometry? padding;
+  final GestureTapCallback? onTap;
 
   MoleculeGridView(
       {this.crossItemCount,
@@ -22,7 +22,7 @@ class MoleculeGridView extends StatelessWidget {
             physics: NeverScrollableScrollPhysics(),
             itemCount: generateItem,
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: crossItemCount),
+                crossAxisCount: crossItemCount!),
             itemBuilder: (context, position) {
               return GestureDetector(
                 onTap: onTap,
