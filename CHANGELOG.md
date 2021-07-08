@@ -1,4 +1,4 @@
-## [0.0.8] - Release
+## [0.1.0] - Release
 
 * migrate example to embedding v2
 * update dependencies to newer version to support null safety
